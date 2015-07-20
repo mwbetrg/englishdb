@@ -39,6 +39,29 @@ CREATE TABLE [questionsfb] (
 [topicid] INTEGER not null 
 REFERENCES questionsmaster (id));
 --
+-- Exporting table definitions for totd
+--
+CREATE TABLE [totd] (
+[issue ] TEXT NOT NULL UNIQUE, 
+[sentence ] TEXT, 
+[date] TEXT);
+--
+-- Exporting table definitions for iotd
+--
+CREATE TABLE [iotd] (
+[idiom] TEXT NOT NULL UNIQUE, 
+[meaning ] TEXT, 
+[sentence ] TEXT,
+[date] TEXT);
+--
+-- Exporting table definitions for wotd
+--
+CREATE TABLE [wotd] (
+[word ] TEXT NOT NULL UNIQUE, 
+[part] TEXT, 
+[sentence ] TEXT,
+[date] TEXT);
+--
 -- Exporting data for  questionsmaster
 --
 insert into questionsmaster values ('matching halves', 'Chapter 11', 'Prac 4 Pelangi p 70', 'literature ', 'form 5', 1, '2015-07-20 03:27:02');
@@ -55,6 +78,16 @@ insert into questionsmaster values ('match prac 4', 'Catch Chap 13', 'Pelangi p 
 insert into aSQLiteManager values (1, 'delete from aSQLiteManager where 1=1');
 insert into aSQLiteManager values (2, 'drop table aSQLiteManager');
 insert into aSQLiteManager values (3, '0.0');
+insert into aSQLiteManager values (4, 'CREATE TABLE [iotd] (
+[idiom] TEXT NOT NULL UNIQUE, 
+[meaning ] TEXT, 
+[sentence ] TEXT,
+[date] TEXT)');
+insert into aSQLiteManager values (5, 'CREATE TABLE [wotd] (
+[word ] TEXT NOT NULL UNIQUE, 
+[part] TEXT, 
+[sentence ] TEXT,
+[date] TEXT)');
 --
 -- Exporting data for  questionsmcq
 --
@@ -113,3 +146,13 @@ insert into questionsfb values ('Val normally left him with Granda ', 'while she
 insert into questionsfb values ('Rory knew that Granda would die soon ', 'if he were left in Rachnadar. ', 8);
 insert into questionsfb values ('Rory wedged open the emergency exit ', 'to help him get to Granda's room secretly. ', 8);
 insert into questionsfb values ('He helped him into his coat and shoes ', 'and stuffed things into the rucksack. ', 8);
+--
+-- Exporting data for  totd
+--
+--
+-- Exporting data for  iotd
+--
+--
+-- Exporting data for  wotd
+--
+insert into wotd values ('ingenious ', 'adjective ', null, '2015');
