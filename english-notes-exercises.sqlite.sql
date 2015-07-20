@@ -72,6 +72,7 @@ insert into questionsmaster values ('fb prac 1', 'traits Chap 13', 'Pelangi p 75
 insert into questionsmaster values ('tf prac 3', 'Catch Chap 13', 'Pelangi p 76', 'literature ', 'form 5', 6, '2015-07-20 06:01:40');
 insert into questionsmaster values ('tf prac 13', 'Catch Chap 13', 'Pelangi p 76', 'literature ', 'form 5', 7, '2015-07-20 06:14:01');
 insert into questionsmaster values ('match prac 4', 'Catch Chap 13', 'Pelangi p 76', 'literature ', 'form 5', 8, '2015-07-20 07:07:17');
+insert into questionsmaster values ('puzzle prac 2', 'Catch Chap 14', 'Pelangi p 78', 'literature ', 'form 5', 9, '2015-07-20 07:30:43');
 --
 -- Exporting data for  aSQLiteManager
 --
@@ -146,6 +147,17 @@ insert into questionsfb values ('Val normally left him with Granda ', 'while she
 insert into questionsfb values ('Rory knew that Granda would die soon ', 'if he were left in Rachnadar. ', 8);
 insert into questionsfb values ('Rory wedged open the emergency exit ', 'to help him get to Granda's room secretly. ', 8);
 insert into questionsfb values ('He helped him into his coat and shoes ', 'and stuffed things into the rucksack. ', 8);
+insert into questionsfb values ('G : the compound or open space surrounding a building ', 'ROUNDS', 9);
+insert into questionsfb values ('T : a vehicle that travels on rails', 'RAIN', 9);
+insert into questionsfb values ('F : a means of transport on water', 'ERRIES', 9);
+insert into questionsfb values ('B : a small vessels on water propelled by engine or oars', 'OATS', 9);
+insert into questionsfb values ('N : a type of thorny plant', 'ETTLES', 9);
+insert into questionsfb values ('R : a natural stream of water', 'IVER', 9);
+insert into questionsfb values ('I : pieces of land surrounded by water', 'SLANDS', 9);
+insert into questionsfb values ('C : land that is bordered by the sea', 'OAST', 9);
+insert into questionsfb values ('B : large coarse fern', 'RACKEN', 9);
+insert into questionsfb values ('P : a person who helps to carry bags for travellers at a station or airport ', 'ORTER ', 9);
+insert into questionsfb values ('P : a structure that juts out to the sea used for landing goods', 'IER', 9);
 --
 -- Exporting data for  totd
 --
