@@ -45,6 +45,9 @@ insert into questionsmaster values ('matching halves', 'Chapter 11', 'Prac 4 Pel
 insert into questionsmaster values ('tf - prac 2', 'Catch Chap 11', 'Pelangi p 69', 'literature ', 'form 5', 2, '2015-07-20 04:01:10');
 insert into questionsmaster values ('tf prac 2', 'Catch Chap 12', 'Pelangi p 72', 'literature ', 'form 5', 3, '2015-07-20 04:58:13');
 insert into questionsmaster values ('meaning - prac 3', 'Catch Chap 12', 'Pelangi p 73', 'literature ', 'form 5', 4, '2015-07-20 05:17:27');
+insert into questionsmaster values ('fb prac 1', 'traits Chap 13', 'Pelangi p 75', 'literature ', 'form 5', 5, '2015-07-20 05:50:21');
+insert into questionsmaster values ('tf prac 3', 'Catch Chap 13', 'Pelangi p 76', 'literature ', 'form 5', 6, '2015-07-20 06:01:40');
+insert into questionsmaster values ('tf prac 13', 'Catch Chap 13', 'Pelangi p 76', 'literature ', 'form 5', 7, '2015-07-20 06:14:01');
 --
 -- Exporting data for  aSQLiteManager
 --
@@ -91,3 +94,15 @@ insert into questionsfb values ('let you down ... let your grand down ', 'did no
 insert into questionsfb values ('jump out of the way', 'to avoid ', 4);
 insert into questionsfb values ('in a flash', 'immediately,  without hesitation ', 4);
 insert into questionsfb values ('further into a shell ', 'to become distant and withdrawn ', 4);
+insert into questionsfb values ('Granda was not quite sure what Rory was up to when the latter came to his room that night and slipped the coat over him.', 'confused ', 5);
+insert into questionsfb values ('Darren gave Rory a solution to the problem of where he could run to for a while by suggesting his family caravan. ', 'helpful ', 5);
+insert into questionsfb values ('Rory thought over his escape plan carefully by going through all the steps in detail. ', 'good planner ', 5);
+insert into questionsfb values ('Darren swore that he would not say a word about Rory's plan to anyone. ', 'trustworthy ', 5);
+insert into questionsfb values ('Rory was full of fear the whole day in school when he thought of his escape plan. ', 'nervous ', 5);
+insert into questionsfb values ('Darren was really attached to his cat. ', 'animal lover', 5);
+insert into questionsfb values ('Darren solved Rory's dilemma of where he and Granda could escape to. ', 't', 7);
+insert into questionsfb values ('Rory took the spare key to the caravan from Darren in school. ', 't', 7);
+insert into questionsfb values ('Rory explained to Granda the whole escape plan. ', 'f', 7);
+insert into questionsfb values ('The emergency door was often wedged open and closed at bedtime. ', 'f', 7);
+insert into questionsfb values ('Rory planned to take a train all the way to Liverpool. ', 'f', 7);
+insert into questionsfb values ('Rory explained to Val the reasons for cramming the rucksack with Granda's clothes. ', 'f', 7);
