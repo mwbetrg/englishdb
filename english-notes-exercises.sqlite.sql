@@ -48,6 +48,7 @@ insert into questionsmaster values ('meaning - prac 3', 'Catch Chap 12', 'Pelang
 insert into questionsmaster values ('fb prac 1', 'traits Chap 13', 'Pelangi p 75', 'literature ', 'form 5', 5, '2015-07-20 05:50:21');
 insert into questionsmaster values ('tf prac 3', 'Catch Chap 13', 'Pelangi p 76', 'literature ', 'form 5', 6, '2015-07-20 06:01:40');
 insert into questionsmaster values ('tf prac 13', 'Catch Chap 13', 'Pelangi p 76', 'literature ', 'form 5', 7, '2015-07-20 06:14:01');
+insert into questionsmaster values ('match prac 4', 'Catch Chap 13', 'Pelangi p 76', 'literature ', 'form 5', 8, '2015-07-20 07:07:17');
 --
 -- Exporting data for  aSQLiteManager
 --
@@ -106,3 +107,9 @@ insert into questionsfb values ('Rory explained to Granda the whole escape plan.
 insert into questionsfb values ('The emergency door was often wedged open and closed at bedtime. ', 'f', 7);
 insert into questionsfb values ('Rory planned to take a train all the way to Liverpool. ', 'f', 7);
 insert into questionsfb values ('Rory explained to Val the reasons for cramming the rucksack with Granda's clothes. ', 'f', 7);
+insert into questionsfb values ('Rory planned a daring ', 'escape plan for Granda and himself. ', 8);
+insert into questionsfb values ('Darren suggested that Rory ', 'hide in his family's caravan. ', 8);
+insert into questionsfb values ('Val normally left him with Granda ', 'while she had coffee with the nurses. ', 8);
+insert into questionsfb values ('Rory knew that Granda would die soon ', 'if he were left in Rachnadar. ', 8);
+insert into questionsfb values ('Rory wedged open the emergency exit ', 'to help him get to Granda's room secretly. ', 8);
+insert into questionsfb values ('He helped him into his coat and shoes ', 'and stuffed things into the rucksack. ', 8);
