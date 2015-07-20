@@ -89,6 +89,10 @@ insert into aSQLiteManager values (5, 'CREATE TABLE [wotd] (
 [part] TEXT, 
 [sentence ] TEXT,
 [date] TEXT)');
+insert into aSQLiteManager values (6, 'Create view [wotddate] as 
+select * 
+from wotd
+order by date desc');
 --
 -- Exporting data for  questionsmcq
 --
@@ -168,3 +172,10 @@ insert into questionsfb values ('P : a structure that juts out to the sea used f
 -- Exporting data for  wotd
 --
 insert into wotd values ('ingenious ', 'adjective ', null, '2015');
+--
+-- Exporting view definitions for wotddate
+--
+CREATE VIEW [wotddate] as 
+select * 
+from wotd
+order by date desc;
