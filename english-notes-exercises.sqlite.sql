@@ -203,7 +203,7 @@ insert into wotd values ('pleasure ', 'noun', null, '20150719', '-');
 insert into wotd values ('gauge', 'verb', null, '20150701', '-');
 insert into wotd values ('profound ', 'adjective ', null, '20150702', '-');
 insert into wotd values ('unprecedented ', 'adjective ', null, '20150630', '-');
-insert into wotd values ('outbreak ', 'noun', null, '20150721', 'a sudden occurrence of something unwelcome, such as war or disease');
+insert into wotd values ('outbreak ', 'noun', 'Decreased tourist revenues are believed to be the result of the SARS outbreak in Canada.', '20150721', 'a sudden occurrence of something unwelcome, such as war or disease');
 insert into wotd values ('enthusiastic ', 'adjective ', null, '20150722', '-');
 --
 -- Exporting data for  totd
@@ -211,6 +211,8 @@ insert into wotd values ('enthusiastic ', 'adjective ', null, '20150722', '-');
 --
 -- Exporting data for  iotd
 --
+insert into iotd values ('can't stand the pace', 'If you can't stand the pace, you are unable to do things well when there is a lot of pressure', 'She once worked for a famous fashion designer but she \textcolor{blue}{couldn't stand the pace}.', '20150721');
+insert into iotd values ('call the shots', 'The person who calls the shots  is the one who makes all the important decisions and is in control of the situation', 'Ronnie shows a lot of authority but in fact it's his wife who \textcolor{blue}{calls the shots}.', '20150722');
 --
 -- Exporting view definitions for wotddate
 --
