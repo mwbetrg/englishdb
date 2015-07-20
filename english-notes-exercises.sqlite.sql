@@ -43,6 +43,8 @@ REFERENCES questionsmaster (id));
 --
 insert into questionsmaster values ('matching halves', 'Chapter 11', 'Prac 4 Pelangi p 70', 'literature ', 'form 5', 1, '2015-07-20 03:27:02');
 insert into questionsmaster values ('tf - prac 2', 'Catch Chap 11', 'Pelangi p 69', 'literature ', 'form 5', 2, '2015-07-20 04:01:10');
+insert into questionsmaster values ('tf prac 2', 'Catch Chap 12', 'Pelangi p 72', 'literature ', 'form 5', 3, '2015-07-20 04:58:13');
+insert into questionsmaster values ('meaning - prac 3', 'Catch Chap 12', 'Pelangi p 73', 'literature ', 'form 5', 4, '2015-07-20 05:17:27');
 --
 -- Exporting data for  aSQLiteManager
 --
@@ -73,3 +75,19 @@ insert into questionsfb values ('The staff nurse managed to calm Rory when she t
 insert into questionsfb values ('Granda had been moved to another Ward in the hospital. ', 'f', 2);
 insert into questionsfb values ('Val was called to come in and talk to Rory. ', 't', 2);
 insert into questionsfb values ('Val told Rory that he could see Granda at certain times only.', 'f', 2);
+insert into questionsfb values ('Rory was fearful of Mrs Foley fostering him. ', 't', 3);
+insert into questionsfb values ('At Rachnadar,  Granda became more and more withdrawn unlike his usual self. ', 't', 3);
+insert into questionsfb values ('Rory found Granda waiting for him at the emergency exit. ', 'f', 3);
+insert into questionsfb values ('Granda felt that people nowadays are not as caring as in the past. ', 't', 3);
+insert into questionsfb values ('Rory wanted the nurse to treat Granda like a little baby. ', 'f', 3);
+insert into questionsfb values ('Val agreed with Rory that Granda was not happy in Rachnadar. ', 'f', 3);
+insert into questionsfb values ('Rory feared that the next person in the home with the bleeding face would be him.', 't', 3);
+insert into questionsfb values ('Granda had mumbled that he would attempt to run away if he were younger. ', 't', 3);
+insert into questionsfb values ('Rory could not remember that Granda talked about running away. ', 'f', 3);
+insert into questionsfb values ('Rory made up his mind to run away with Granda. ', 't', 3);
+insert into questionsfb values ('a broken heart ', 'end of the world ', 4);
+insert into questionsfb values ('couldn't handle it at all', 'could not accept the situation ', 4);
+insert into questionsfb values ('let you down ... let your grand down ', 'did not fulfill a promise ', 4);
+insert into questionsfb values ('jump out of the way', 'to avoid ', 4);
+insert into questionsfb values ('in a flash', 'immediately,  without hesitation ', 4);
+insert into questionsfb values ('further into a shell ', 'to become distant and withdrawn ', 4);
