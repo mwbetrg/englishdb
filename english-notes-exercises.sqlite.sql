@@ -171,7 +171,13 @@ insert into questionsfb values ('P : a structure that juts out to the sea used f
 --
 -- Exporting data for  wotd
 --
-insert into wotd values ('ingenious ', 'adjective ', null, '2015');
+insert into wotd values ('ingenious ', 'adjective ', null, '20150718');
+insert into wotd values ('mastermind ', 'verb', null, '20150720');
+insert into wotd values ('reflect ', 'verb', null, '20150717');
+insert into wotd values ('mumble', 'verb', null, '20150713');
+insert into wotd values ('slender ', 'adjective ', null, '20150714');
+insert into wotd values ('superstition ', 'noun', null, '20150712');
+insert into wotd values ('courteous ', 'adjective ', null, '20150711');
 --
 -- Exporting view definitions for wotddate
 --
