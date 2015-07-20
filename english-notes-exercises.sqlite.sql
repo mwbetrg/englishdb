@@ -45,7 +45,7 @@ CREATE TABLE [wotd] (
 [word] TEXT NOT NULL UNIQUE, 
 [part] TEXT, 
 [sentence] TEXT,
-[date] TEXT);
+[date] TEXT, meaning default '-');
 --
 -- Exporting table definitions for totd
 --
@@ -109,6 +109,9 @@ insert into aSQLiteManager values (10, 'CREATE TABLE [iotd] (
 [sentence] TEXT,
 [date] TEXT)');
 insert into aSQLiteManager values (11, 'CREATE VIEW iotdcount as select count(idiom) from iotd');
+insert into aSQLiteManager values (12, 'select * from wotd ');
+insert into aSQLiteManager values (13, 'select {||word||} from wotd ');
+insert into aSQLiteManager values (14, 'alter table wotd add meaning default '-'');
 --
 -- Exporting data for  questionsmcq
 --
@@ -181,25 +184,27 @@ insert into questionsfb values ('P : a structure that juts out to the sea used f
 --
 -- Exporting data for  wotd
 --
-insert into wotd values ('ingenious ', 'adjective', null, '20150718');
-insert into wotd values ('mastermind ', 'verb', null, '20150720');
-insert into wotd values ('reflect ', 'verb', null, '20150717');
-insert into wotd values ('mumble', 'verb', null, '20150713');
-insert into wotd values ('slender ', 'adjective ', null, '20150714');
-insert into wotd values ('superstition ', 'noun', null, '20150712');
-insert into wotd values ('courteous', 'adjective', null, '20150711');
-insert into wotd values ('timely ', 'adjective ', null, '20150710');
-insert into wotd values ('contentious ', 'adjective ', null, '20150709');
-insert into wotd values ('humane', 'adjective ', null, '20150708');
-insert into wotd values ('brazen', 'adjective ', null, '20150707');
-insert into wotd values ('misdemeanor ', 'adjective ', null, '20150706');
-insert into wotd values ('outright ', 'adjective ', null, '20150705');
-insert into wotd values ('attached ', 'adjective ', null, '20150704');
-insert into wotd values ('plight ', 'noun ', null, '20150703');
-insert into wotd values ('pleasure ', 'noun', null, '20150719');
-insert into wotd values ('gauge', 'verb', null, '20150701');
-insert into wotd values ('profound ', 'adjective ', null, '20150702');
-insert into wotd values ('unprecedented ', 'adjective ', null, '20150630');
+insert into wotd values ('ingenious', 'adjective', null, '20150718', '-');
+insert into wotd values ('mastermind', 'verb', null, '20150720', '-');
+insert into wotd values ('reflect', 'verb', null, '20150717', '-');
+insert into wotd values ('mumble', 'verb', null, '20150713', '-');
+insert into wotd values ('slender', 'adjective ', null, '20150714', '-');
+insert into wotd values ('superstition ', 'noun', null, '20150712', '-');
+insert into wotd values ('courteous', 'adjective', null, '20150711', '-');
+insert into wotd values ('timely', 'adjective ', null, '20150710', '-');
+insert into wotd values ('contentious ', 'adjective ', null, '20150709', '-');
+insert into wotd values ('humane', 'adjective ', null, '20150708', '-');
+insert into wotd values ('brazen', 'adjective', null, '20150707', '-');
+insert into wotd values ('misdemeanor ', 'adjective ', null, '20150706', '-');
+insert into wotd values ('outright', 'adjective ', null, '20150705', '-');
+insert into wotd values ('attached ', 'adjective ', null, '20150704', '-');
+insert into wotd values ('plight ', 'noun ', null, '20150703', '-');
+insert into wotd values ('pleasure ', 'noun', null, '20150719', '-');
+insert into wotd values ('gauge', 'verb', null, '20150701', '-');
+insert into wotd values ('profound ', 'adjective ', null, '20150702', '-');
+insert into wotd values ('unprecedented ', 'adjective ', null, '20150630', '-');
+insert into wotd values ('outbreak ', 'noun', null, '20150721', 'a sudden occurrence of something unwelcome, such as war or disease');
+insert into wotd values ('enthusiastic ', 'adjective ', null, '20150722', '-');
 --
 -- Exporting data for  totd
 --
