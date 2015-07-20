@@ -213,6 +213,7 @@ insert into wotd values ('enthusiastic ', 'adjective ', null, '20150722', '-');
 --
 insert into iotd values ('can't stand the pace', 'If you can't stand the pace, you are unable to do things well when there is a lot of pressure', 'She once worked for a famous fashion designer but she \textcolor{blue}{couldn't stand the pace}.', '20150721');
 insert into iotd values ('call the shots', 'The person who calls the shots  is the one who makes all the important decisions and is in control of the situation', 'Ronnie shows a lot of authority but in fact it's his wife who \textcolor{blue}{calls the shots}.', '20150722');
+insert into iotd values ('cherry pick', 'When you cherry pick, you choose something with great care and select only the best', 'Top university graduates are often \textcolor{blue}{cherry-picked} by large companies', '20150723');
 --
 -- Exporting view definitions for wotddate
 --
