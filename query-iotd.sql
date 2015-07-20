@@ -1,0 +1,1 @@
+select "\textbf{\so{"||idiom||"}} \bigskip " ||  "\begin{minipage}{14cm} \textit{"||meaning||"} \end{minipage} \bigskip " || "\begin{minipage}{14cm}\texttt{"||sentence||"} \end{minipage}" as note  from iotd where date = "20150721"
