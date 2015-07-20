@@ -204,7 +204,10 @@ insert into wotd values ('gauge', 'verb', null, '20150701', '-');
 insert into wotd values ('profound ', 'adjective ', null, '20150702', '-');
 insert into wotd values ('unprecedented ', 'adjective ', null, '20150630', '-');
 insert into wotd values ('outbreak ', 'noun', 'Decreased tourist revenues are believed to be the result of the SARS outbreak in Canada.', '20150721', 'a sudden occurrence of something unwelcome, such as war or disease');
-insert into wotd values ('enthusiastic ', 'adjective ', null, '20150722', '-');
+insert into wotd values ('enthusiastic ', 'adjective ', 'He could be wildly \textcolor{blue}{enthusiastic}  about a project.', '20150722', 'having or showing intense and eager enjoyment, interest, or approval');
+insert into wotd values ('entitle', 'verb', 'Employees are normally \textcolor{blue}{entitled} to redundancy pay.', '20150723', '(often be entitled to) give (someone) a legal right or a just claim to receive or do something');
+insert into wotd values ('equal', 'adjective ', 'People are born free and \textcolor{blue}{equal}.', '20150724', '(of people) having the same status, rights, or opportunities');
+insert into wotd values ('heed', 'verb', 'He should have \textcolor{blue}{heeded} the warnings.', '20150725', 'pay attention to; take notice of');
 --
 -- Exporting data for  totd
 --
