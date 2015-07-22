@@ -209,6 +209,7 @@ insert into wotd values ('entitle', 'verb', 'Employees are normally \textcolor{b
 insert into wotd values ('equal', 'adjective ', 'People are born free and \textcolor{blue}{equal}.', '20150724', '(of people) having the same status, rights, or opportunities');
 insert into wotd values ('heed', 'verb', 'He should have \textcolor{blue}{heeded} the warnings.', '20150725', 'pay attention to; take notice of');
 insert into wotd values ('withdrawn', 'adjective', 'When her husband died she became very \textcolor{blue}{withdrawn}.', '20150726', 'not wanting to communicate with other people');
+insert into wotd values ('penchant', 'noun', 'He has a \textcolor{blue}{penchant} for adopting stray dogs.', '20150727', 'a strong or habitual liking for something or tendency to do something');
 --
 -- Exporting data for  totd
 --
