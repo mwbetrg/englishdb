@@ -244,7 +244,8 @@ db.connect()
 #datesun = (str(tahunini)+str(month)+str(hb))
 week = 20
 
-u = Lessonplan2015.select().where(Lessonplan2015.week == week )
+u = Lessonplan2015.select().where(Lessonplan2015.week ==\
+                                  week).order_by(-Lessonplan2015.date)
 
 for i in u:
-    print i.tingkatan, i.timestart, i.timeend
+    print i.date, i.tingkatan, i.timestart, i.timeend
