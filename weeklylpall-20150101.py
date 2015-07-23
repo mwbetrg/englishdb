@@ -261,7 +261,7 @@ datethu = tdatethu.strftime('%Y%m%d')
 #-----------------------------------------------------------------------    
 # Sunday
 
-sun01 = Lessonplan2015.create(tingkatan="5INT4",\
+sun01 = Lessonplan2015.create(tingkatan="5INT2",\
                               date=int(datesun),\
                               timestart="0820",\
                               timeend="0940",\
@@ -283,11 +283,11 @@ sun01 = Lessonplan2015.create(tingkatan="5INT4",\
                               exercise="-"
                              )
 
-sun02 = Lessonplan2015.create(tingkatan="6BI4",\
+sun02 = Lessonplan2015.create(tingkatan="5INT4",\
                               date=datesun,\
-                              timestart="1050",\
-                              timeend="1250",\
-                              duration="120",\
+                              timestart="1250",\
+                              timeend="1400",\
+                              duration="80",\
                               theme="-",\
                               topic="-",\
                               lo1="-",\
@@ -309,32 +309,10 @@ sun02 = Lessonplan2015.create(tingkatan="6BI4",\
 # Monday
 
 
-mon01 = Lessonplan2015.create(tingkatan="4INT3",\
+mon01 = Lessonplan2015.create(tingkatan="4IBS",\
                               date=datemon,\
-                              timestart="0900",\
-                              timeend="1020",\
-                              duration="80",\
-                              theme="-",\
-                              topic="-",\
-                              lo1="-",\
-                              lo2="-",\
-                              lo3="-",\
-                              content="-",\
-                              activity1="-",\
-                              activity2="-",\
-                              activity3="-",\
-                              assimilation="-",\
-                              impact="-",\
-                              note="-",\
-                              week=week,\
-                              handout="-",\
-                              exercise="-"
-                             )
-
-mon02 = Lessonplan2015.create(tingkatan="5INT2",\
-                              date=datemon,\
-                              timestart="1020",\
-                              timeend="1100",\
+                              timestart="0740",\
+                              timeend="0820",\
                               duration="40",\
                               theme="-",\
                               topic="-",\
@@ -353,8 +331,7 @@ mon02 = Lessonplan2015.create(tingkatan="5INT2",\
                               exercise="-"
                              )
 
-
-mon03 = Lessonplan2015.create(tingkatan="5INT4",\
+mon02 = Lessonplan2015.create(tingkatan="5INT2",\
                               date=datemon,\
                               timestart="1250",\
                               timeend="1400",\
@@ -379,7 +356,7 @@ mon03 = Lessonplan2015.create(tingkatan="5INT4",\
 #-----------------------------------------------------------------------    
 # Tuesday
 
-tue01 = Lessonplan2015.create(tingkatan="5INT2",\
+tue01 = Lessonplan2015.create(tingkatan="4IBS",\
                               date=datetue,\
                               timestart="0815",\
                               timeend="0925",\
@@ -401,11 +378,33 @@ tue01 = Lessonplan2015.create(tingkatan="5INT2",\
                               exercise="-"
                              )
 
-tue02 = Lessonplan2015.create(tingkatan="6BI4",\
+tue02 = Lessonplan2015.create(tingkatan="5INT4",\
                               date=datetue,\
-                              timestart="1250",\
-                              timeend="1400",\
-                              duration="80",\
+                              timestart="1000",\
+                              timeend="1035",\
+                              duration="35",\
+                              theme="-",\
+                              topic="-",\
+                              lo1="-",\
+                              lo2="-",\
+                              lo3="-",\
+                              content="-",\
+                              activity1="-",\
+                              activity2="-",\
+                              activity3="-",\
+                              assimilation="-",\
+                              impact="-",\
+                              note="-",\
+                              week=week,\
+                              handout="-",\
+                              exercise="-"
+                             )
+
+tue03 = Lessonplan2015.create(tingkatan="4INT4",\
+                              date=datetue,\
+                              timestart="1215",\
+                              timeend="1325",\
+                              duration="70",\
                               theme="-",\
                               topic="-",\
                               lo1="-",\
@@ -426,32 +425,10 @@ tue02 = Lessonplan2015.create(tingkatan="6BI4",\
 #-----------------------------------------------------------------------    
 # Wednesday
 
-wed01 = Lessonplan2015.create(tingkatan="6BI4",\
+wed01 = Lessonplan2015.create(tingkatan="4IBS",\
                               date=datewed,\
                               timestart="0740",\
-                              timeend="0940",\
-                              duration="80",\
-                              theme="-",\
-                              topic="-",\
-                              lo1="-",\
-                              lo2="-",\
-                              lo3="-",\
-                              content="-",\
-                              activity1="-",\
-                              activity2="-",\
-                              activity3="-",\
-                              assimilation="-",\
-                              impact="-",\
-                              note="-",\
-                              week=week,\
-                              handout="-",\
-                              exercise="-"
-                             )
-
-wed02 = Lessonplan2015.create(tingkatan="5INT4",\
-                              date=datewed,\
-                              timestart="1020",\
-                              timeend="1100",\
+                              timeend="0820",\
                               duration="40",\
                               theme="-",\
                               topic="-",\
@@ -470,7 +447,7 @@ wed02 = Lessonplan2015.create(tingkatan="5INT4",\
                               exercise="-"
                              )
 
-wed03 = Lessonplan2015.create(tingkatan="5INT2",\
+wed02 = Lessonplan2015.create(tingkatan="4INT4",\
                               date=datewed,\
                               timestart="1130",\
                               timeend="1250",\
@@ -495,10 +472,32 @@ wed03 = Lessonplan2015.create(tingkatan="5INT2",\
 #-----------------------------------------------------------------------    
 # Thursday
 
-thu01 = Lessonplan2015.create(tingkatan="4INT5",\
+thu01 = Lessonplan2015.create(tingkatan="5INT2",\
                               date=datethu,\
-                              timestart="0940",\
-                              timeend="1100",\
+                              timestart="0900",\
+                              timeend="0940",\
+                              duration="40",\
+                              theme="-",\
+                              topic="-",\
+                              lo1="-",\
+                              lo2="-",\
+                              lo3="-",\
+                              content="-",\
+                              activity1="-",\
+                              activity2="-",\
+                              activity3="-",\
+                              assimilation="-",\
+                              impact="-",\
+                              note="-",\
+                              week=week,\
+                              handout="-",\
+                              exercise="-"
+                             )
+
+thu02 = Lessonplan2015.create(tingkatan="5INT4",\
+                              date=datethu,\
+                              timestart="1130",\
+                              timeend="1250",\
                               duration="80",\
                               theme="-",\
                               topic="-",\
@@ -516,6 +515,29 @@ thu01 = Lessonplan2015.create(tingkatan="4INT5",\
                               handout="-",\
                               exercise="-"
                              )
+
+thu03 = Lessonplan2015.create(tingkatan="4IBS",\
+                              date=datethu,\
+                              timestart="1250",\
+                              timeend="1400",\
+                              duration="70",\
+                              theme="-",\
+                              topic="-",\
+                              lo1="-",\
+                              lo2="-",\
+                              lo3="-",\
+                              content="-",\
+                              activity1="-",\
+                              activity2="-",\
+                              activity3="-",\
+                              assimilation="-",\
+                              impact="-",\
+                              note="-",\
+                              week=week,\
+                              handout="-",\
+                              exercise="-"
+                             )
+
 
 #for period in Lessonplan2015.select().where(Lessonplan2015.week == week )
 #    print period
