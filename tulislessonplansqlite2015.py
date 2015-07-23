@@ -10,7 +10,7 @@ import datetime
 #from pysqlite2 import dbapi2 as sqlite
 import sqlite3
 
-con = sqlite3.connect("/usb/phpmysql/lessonplan2010.db", isolation_level=None)
+con = sqlite3.connect("/storage/extSdCard/englishdb/lessonplan2010.db", isolation_level=None)
 cur = con.cursor()
 
 tahunini = "2015"
@@ -20,11 +20,13 @@ if len(sys.argv) < 2:
     print "Usage: %s date (MMDD)  " % sys.argv[0]
     sys.exit(1)
 
+sdir = "/storage/extSdCard/lp2015"
+
 hb = sys.argv[1]
-failtex = tahunini+hb+".tex"
-failtexlog = tahunini+hb+".log"
-failtexaux = tahunini+hb+".aux"
-failtexpdf = tahunini+hb+".pdf"
+failtex = sdir+tahunini+hb+".tex"
+failtexlog = sdir+tahunini+hb+".log"
+failtexaux = sdir+tahunini+hb+".aux"
+failtexpdf = sdir+tahunini+hb+".pdf"
 failkeluar = open(failtex, "w")  
 
 tarikh = tahunini+hb

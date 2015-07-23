@@ -8,12 +8,12 @@ from time import strftime
 #from pysqlite2 import dbapi2 as sqlite
 import sqlite3
 
-con01 = sqlite3.connect("/usb/phpmysql/lessonplan2010.db")
-#con01 = sqlite3.connect("/storage/extSdCard/englishdb/lessonplan2010.db")
+#con01 = sqlite3.connect("/usb/phpmysql/lessonplan2010.db")
+con01 = sqlite3.connect("/storage/extSdCard/englishdb/lessonplan2010.db")
 cur01 = con01.cursor()
 
-con02 = sqlite3.connect("/usb/phpmysql/lessonplan2010.db")
-#con02 = sqlite3.connect("/storage/extSdCard/englishdb/lessonplan2010.db")
+#con02 = sqlite3.connect("/usb/phpmysql/lessonplan2010.db")
+con02 = sqlite3.connect("/storage/extSdCard/englishdb/lessonplan2010.db")
 cur02 = con02.cursor()
 
 if len(sys.argv) < 2:

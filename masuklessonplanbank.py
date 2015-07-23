@@ -10,8 +10,8 @@ from time import strftime
 import sqlite3
 
 def masukpengkalandata():
-    con = sqlite3.connect("/usb/phpmysql/lessonplan2010.db")
-    #con = sqlite3.connect("/storage/extSdCard/englishdb/lessonplan2010.db")
+    #con = sqlite3.connect("/usb/phpmysql/lessonplan2010.db")
+    con = sqlite3.connect("/storage/extSdCard/englishdb/lessonplan2010.db")
     cur = con.cursor()
     cur.execute("insert into lessonplanbank(tingkatan,level,week,duration,theme,topic,lo1,lo2,lo3,content,activity1,activity2,assimilation,impact,note) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",(form,level,week,duration,theme,topic,lo1,lo2,lo3,content,activity1,activity2,assimilation,impact,note))
     print "Lesson bank id: %s" % cur.lastrowid
