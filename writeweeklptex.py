@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #Created : Fri 24 Jul 2015 09:18:22 AM UTC
-#Last Modified : Fri 24 Jul 2015 02:51:40 PM UTC
+#Last Modified : Fri 24 Jul 2015 06:48:01 PM MYT
 
 import os
 import sys
@@ -592,7 +592,7 @@ EVALUATION}}\\\\\n\
 
 
 
-for i in weekmon:
+for i in weektue:
 
     if i.theme.startswith("PEPERIKSAAN"):
         print >>failkeluar,"\\centerline{%s}\\linebreak" % i.tingkatan
@@ -733,7 +733,7 @@ EVALUATION}}\\\\\n\
 
 
 
-for i in weekmon:
+for i in weekwed:
 
     if i.theme.startswith("PEPERIKSAAN"):
         print >>failkeluar,"\\centerline{%s}\\linebreak" % i.tingkatan
@@ -874,7 +874,7 @@ EVALUATION}}\\\\\n\
 
 
 
-for i in weekmon:
+for i in weekthu:
 
     if i.theme.startswith("PEPERIKSAAN"):
         print >>failkeluar,"\\centerline{%s}\\linebreak" % i.tingkatan
