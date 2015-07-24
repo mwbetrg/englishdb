@@ -241,7 +241,10 @@ hb = int(sys.argv[3])
 tahunini = datetime.datetime.now().year 
 #tahunini = "2015"
 
-datesun = (str(tahunini)+str(month)+str(hb))
+tdatesun =  datetime.datetime(int(tahunini), int(month), int(hb)) + datetime.timedelta(days=0)
+datesun = tdatesun.strftime('%Y%m%d')
+
+#datesun = (str(tahunini)+str(month)+str(hb))
 
 #-----------------------------------------------------------------------    
 #datemon = str(tahunini)+str(month)+str(hb+1)
