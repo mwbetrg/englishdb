@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #Created : Fri 24 Jul 2015 09:18:22 AM UTC
-#Last Modified : Fri 24 Jul 2015 11:25:15 AM UTC
+#Last Modified : Fri 24 Jul 2015 12:07:07 PM UTC
 
 import os
 import sys
@@ -244,15 +244,15 @@ db.connect()
 #    sys.exit(1)
 
 
-week = 23
-month = 07
-hb = 19
+#week = 23
+month = 06
+hb = 21
 tahunini = datetime.datetime.now().year 
 
-lpweeksun = Lessonplan2015.get(Lessonplan2015.week == 19)
+#lpweeksun = Lessonplan2015.get(Lessonplan2015.week == 19)
 
-datesun = lpweeksun.date
-
+#datesun = lpweeksun.date
+datesun = str(tahunini)+str(month)+str(hb)
 
 
 sdir = "/tmp/"
