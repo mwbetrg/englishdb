@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #Created : Fri 24 Jul 2015 09:18:22 AM UTC
-#Last Modified : Fri 24 Jul 2015 12:59:46 PM UTC
+#Last Modified : Fri 24 Jul 2015 02:51:40 PM UTC
 
 import os
 import sys
@@ -249,10 +249,10 @@ month = 06
 hb = 21
 tahunini = datetime.datetime.now().year 
 
-#lpweeksun = Lessonplan2015.get(Lessonplan2015.week == 19)
+lpweeksun = Lessonplan2015.get(Lessonplan2015.week == 20)
 
-#datesun = lpweeksun.date
-datesun = str(tahunini)+str(month)+str(hb)
+datesun = int(lpweeksun.date)
+#datesun = str(tahunini)+str(month)+str(hb)
 
 
 sdir = "/tmp/"
@@ -265,11 +265,10 @@ failtexpdf = sdir+"weekly"+str(datesun)+".pdf"
 failkeluar = open(failtex, "w")  
 
 
-
-tdatemon = datetime.datetime(int(tahunini), int(month), int(hb)) + datetime.timedelta(days=1)
-tdatetue = datetime.datetime(int(tahunini), int(month), int(hb)) + datetime.timedelta(days=2)
-tdatewed = datetime.datetime(int(tahunini), int(month), int(hb)) + datetime.timedelta(days=3)
-tdatethu = datetime.datetime(int(tahunini), int(month), int(hb)) + datetime.timedelta(days=4)
+tdatemon = datetime.datetime.strptime(str(datesun), '%Y%m%d') + datetime.timedelta(days=1)
+tdatetue = datetime.datetime.strptime(str(datesun), '%Y%m%d') + datetime.timedelta(days=2)
+tdatewed = datetime.datetime.strptime(str(datesun), '%Y%m%d') + datetime.timedelta(days=3)
+tdatethu = datetime.datetime.strptime(str(datesun), '%Y%m%d') + datetime.timedelta(days=4)
 
 datemon = tdatemon.strftime('%Y%m%d')
 datetue = tdatetue.strftime('%Y%m%d')

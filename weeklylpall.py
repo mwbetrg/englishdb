@@ -4,8 +4,8 @@ import datetime
 import io
 import sys
 
-#db = SqliteDatabase('lessonplan2010.db', **{})
-db = SqliteDatabase('/storage/extSdCard/englishdb/lessonplan2010.db', **{})
+db = SqliteDatabase('lessonplan2010.db', **{})
+#db = SqliteDatabase('/storage/extSdCard/englishdb/lessonplan2010.db', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -247,10 +247,6 @@ datesun = tdatesun.strftime('%Y%m%d')
 #datesun = (str(tahunini)+str(month)+str(hb))
 
 #-----------------------------------------------------------------------    
-#datemon = str(tahunini)+str(month)+str(hb+1)
-#datetue = str(tahunini)+str(month)+str(hb+2)
-#datewed = str(tahunini)+str(month)+str(hb+3)
-#datethu = str(tahunini)+str(month)+str(hb+4)
 tdatemon = datetime.datetime(int(tahunini), int(month), int(hb)) + datetime.timedelta(days=1)
 tdatetue = datetime.datetime(int(tahunini), int(month), int(hb)) + datetime.timedelta(days=2)
 tdatewed = datetime.datetime(int(tahunini), int(month), int(hb)) + datetime.timedelta(days=3)
@@ -520,5 +516,7 @@ thu01 = Lessonplan2015.create(tingkatan="4INT5",\
                               exercise="-"
                              )
 
-#for period in Lessonplan2015.select().where(Lessonplan2015.week == week )
-#    print period
+thisweek = Lessonplan2015.select().where(Lessonplan2015.week == week)
+
+for i in thisweek:
+    print i.date+" = "+i.timestart
