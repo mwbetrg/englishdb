@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #Created : Fri 24 Jul 2015 09:18:22 AM UTC
-#Last Modified : Fri 24 Jul 2015 06:48:01 PM MYT
+#Last Modified : Fri 24 Jul 2015 09:44:53 PM MYT
 
 import os
 import sys
@@ -10,8 +10,8 @@ from peewee import *
 import datetime
 import io
 
-#db = SqliteDatabase('lessonplan2010.db', **{})
-db = SqliteDatabase('/storage/extSdCard/englishdb/lessonplan2010.db', **{})
+db = SqliteDatabase('lessonplan2010.db', **{})
+#db = SqliteDatabase('/storage/extSdCard/englishdb/lessonplan2010.db', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -255,8 +255,8 @@ datesun = int(lpweeksun.date)
 #datesun = str(tahunini)+str(month)+str(hb)
 
 
-#sdir = "/tmp/"
-sdir = "/storage/extSdCard/lp2015/"
+sdir = "/tmp/"
+#sdir = "/storage/extSdCard/lp2015/"
 
 failtex = sdir+"weekly-week-"+str(week)+"-"+str(datesun)+".tex"
 failtexlog = sdir+"weekly"+str(datesun)+".log"
@@ -882,7 +882,7 @@ for i in weekthu:
         print >>failkeluar,"\n\\centerline{%s-%s}&\
         \\multicolumn{3}{c|}{%s}   \\\\" % (i.timestart,i.timeend,i.theme.upper())
         print >>failkeluar,"\n& \\multicolumn{3}{c|}{\\textit{%s}}  \\\\ \
-        &&&\\\\" % topic 
+        &&&\\\\" % i.topic 
         print >>failkeluar,"\n& \\multicolumn{3}{c|}{\\textit{[%s]}} \\\\" % i.lo1
         print >>failkeluar,"\n& \\multicolumn{3}{c|}{\\textit{%s}}  \\\\" %  i.lo2
         print >>failkeluar,"\n & \\multicolumn{3}{c|}{\\textit{%s}}  \\\\" % i.lo3
