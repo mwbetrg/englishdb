@@ -10,8 +10,8 @@ from peewee import *
 import datetime
 import io
 
-db = SqliteDatabase('lessonplan2010.db', **{})
-#db = SqliteDatabase('/storage/extSdCard/englishdb/lessonplan2010.db', **{})
+#db = SqliteDatabase('lessonplan2010.db', **{})
+db = SqliteDatabase('/storage/extSdCard/englishdb/lessonplan2010.db', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -239,26 +239,26 @@ db.connect()
 
 
 
-#if len(sys.argv) < 4:
-    #print "Begini boh: %s minggu (WW) bulan (MM) hb (DD)" % sys.argv[0]
-#    sys.exit(1)
+if len(sys.argv) < 2:
+    print "Begini boh: %s minggu (WW)" % sys.argv[0]
+    sys.exit(1)
 
 
-#week = 23
-month = 06
-hb = 21
-tahunini = datetime.datetime.now().year 
+week = sys.argv[1]
+#month = 06
+#hb = 21
+#tahunini = datetime.datetime.now().year 
 
-lpweeksun = Lessonplan2015.get(Lessonplan2015.week == 20)
+lpweeksun = Lessonplan2015.get(Lessonplan2015.week == week)
 
 datesun = int(lpweeksun.date)
 #datesun = str(tahunini)+str(month)+str(hb)
 
 
-sdir = "/tmp/"
-#sdir = "/storage/extSdCard/lp2015"
+#sdir = "/tmp/"
+sdir = "/storage/extSdCard/lp2015/"
 
-failtex = sdir+"weekly"+str(datesun)+".tex"
+failtex = sdir+"weekly-week-"+str(week)+"-"+str(datesun)+".tex"
 failtexlog = sdir+"weekly"+str(datesun)+".log"
 failtexaux = sdir+"weekly"+str(datesun)+".aux"
 failtexpdf = sdir+"weekly"+str(datesun)+".pdf"
