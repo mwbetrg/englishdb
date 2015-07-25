@@ -37,20 +37,17 @@ class Lessonplan2015(BaseModel):
         db_table = 'lessonplan2015'
 
 
+
 db.connect()
 
 if len(sys.argv) < 2:
-    print "Begini boh: %s tarikh (MMDD)" % sys.argv[0]
+    print "Begini boh: %s tema" % sys.argv[0]
     sys.exit(1)
 
-tarikh = sys.argv[1]
-tahunini = datetime.datetime.now().year
-#month = sys.argv[2]
 
-hb = str(tahunini)+str(tarikh)
-u = Lessonplan2015.select().where(Lessonplan2015.date ==\
-                                  hb).order_by(Lessonplan2015.timestart)
+tema = sys.argv[1]
+u =\
+Lessonplan2015.select().where(Lessonplan2015.theme.contains(tema)).order_by(Lessonplan2015.date)
 
 for i in u:
-    print i.tingkatan+" : "+i.timestart+"-"+i.timeend+" Theme: "+i.theme+"\
-            Topic:"+i.topic
+    print "("+str(i.date)+")\t"+"Form: "+i.tingkatan+" : "+i.topic
