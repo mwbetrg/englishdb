@@ -40,15 +40,16 @@ class Lessonplan2015(BaseModel):
 db.connect()
 
 if len(sys.argv) < 2:
-    print "Begini boh: %s tarikh" % sys.argv[0]
+    print "Begini boh: %s tarikh (MMDD)" % sys.argv[0]
     sys.exit(1)
 
 tarikh = sys.argv[1]
+tahunini = datetime.datetime.now().year
 #month = sys.argv[2]
 
-
+hb = str(tahunini)+str(tarikh)
 u = Lessonplan2015.select().where(Lessonplan2015.date ==\
-                                  tarikh).order_by(Lessonplan2015.timestart)
+                                  hb).order_by(Lessonplan2015.timestart)
 
 for i in u:
     print i.tingkatan+" : "+i.timestart+"-"+i.timeend+" Theme: "+i.theme+"\
