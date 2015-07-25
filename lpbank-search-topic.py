@@ -5,8 +5,8 @@ import datetime
 import io
 import sys
 
-db = SqliteDatabase('lessonplan2010.db', **{})
-#db = SqliteDatabase('/storage/extSdCard/englishdb/lessonplan2010.db', **{})
+#db = SqliteDatabase('lessonplan2010.db', **{})
+db = SqliteDatabase('/storage/extSdCard/englishdb/lessonplan2010.db', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -47,4 +47,4 @@ topik = sys.argv[1]
 u = Lessonplanbank.select().where(Lessonplanbank.topic.contains(topik))
 
 for i in u:
-    print "("+str(i.bank)+")\t"+"Form: "+i.tingkatan+":"+i.topic
+    print "("+str(i.bank)+")\t"+"Form: "+i.tingkatan+":"+i.topic+" : "+i.content
