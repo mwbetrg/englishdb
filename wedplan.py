@@ -66,7 +66,7 @@ class Lessonplanbank(BaseModel):
 db.connect()
 
 if len(sys.argv) < 4:
-    print "Begini boh: %s minggu bulan (MM) hb (DD)" % sys.argv[0]
+    print "Begini boh: %s minggu (WW) bulan (MM) hb (DD)" % sys.argv[0]
     sys.exit(1)
 
 week = sys.argv[1]
@@ -75,19 +75,9 @@ hb = int(sys.argv[3])
 tahunini = datetime.datetime.now().year 
 #tahunini = "2015"
 
-tdatesun =  datetime.datetime(int(tahunini), int(month), int(hb)) + datetime.timedelta(days=0)
-datesun = tdatesun.strftime('%Y%m%d')
-
-
-tdatemon = datetime.datetime(int(tahunini), int(month), int(hb)) + datetime.timedelta(days=1)
-tdatetue = datetime.datetime(int(tahunini), int(month), int(hb)) + datetime.timedelta(days=2)
-tdatewed = datetime.datetime(int(tahunini), int(month), int(hb)) + datetime.timedelta(days=3)
-tdatethu = datetime.datetime(int(tahunini), int(month), int(hb)) + datetime.timedelta(days=4)
-
-datemon = tdatemon.strftime('%Y%m%d')
-datetue = tdatetue.strftime('%Y%m%d')
+tdatewed =  datetime.datetime(int(tahunini), int(month), int(hb)) + datetime.timedelta(days=0)
 datewed = tdatewed.strftime('%Y%m%d')
-datethu = tdatethu.strftime('%Y%m%d')                             
+
 
 #-----------------------------------------------------------------------    
 
