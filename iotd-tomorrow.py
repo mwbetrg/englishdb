@@ -12,6 +12,8 @@ import site
 from peewee import *
 import datetime
 
+reload(sys) sys.setdefaultencoding('utf8')
+
 #database = SqliteDatabase('english-notes-exercises.sqlite', **{})
 
 database = SqliteDatabase('/storage/extSdCard/english-notes-exercises.sqlite', **{})
