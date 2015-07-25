@@ -5557,8 +5557,7 @@ insert into lessonplan2015 values (87, '4INT4', 20150121, '1130', '1250', '80', 
 insert into lessonplan2015 values (88, '5INT2', 20150122, '0900', '0940', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
 insert into lessonplan2015 values (89, '5INT4', 20150122, '1130', '1250', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
 insert into lessonplan2015 values (90, '4IBS', 20150122, '1250', '1400', '70', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
-insert into lessonplan2015 values (91, '5INT2', 20150125, '0820', '0940', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '03', '-', '-');
-insert into lessonplan2015 values (92, '5INT4', 20150125, '1250', '1400', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '03', '-', '-');
+insert into lessonplan2015 values (91, '5INT2', 20150125, '0820', '0940', '80', 'Grammar - Parts of Speech', 'Basic Sentence Patterns', 'construct a basic sentence consisting of a subject and a verb', 'construct a basic sentence consisting a subject a verb and a complement', 'construct a basic sentence consisting a subject a verb  and an object', 'Selected notes', 'completing SVO worksheet', 'constructing basic sentences', '-', '-', '-', '03', '-', '-');
 insert into lessonplan2015 values (93, '4IBS', 20150126, '0740', '0820', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '03', '-', '-');
 insert into lessonplan2015 values (94, '5INT2', 20150126, '1250', '1400', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '03', '-', '-');
 insert into lessonplan2015 values (95, '4IBS', 20150127, '0815', '0925', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '03', '-', '-');
@@ -5714,6 +5713,67 @@ insert into lessonplan2015 values (244, '4IBS', 20150514, '1250', '1400', '70', 
 insert into lessonplan2015 values (245, '6BI4', 20150725, '0740', '0940', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '22', '-', '-');
 insert into lessonplan2015 values (246, '5INT4', 20150725, '1020', '1100', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '22', '-', '-');
 insert into lessonplan2015 values (247, '5INT2', 20150725, '1130', '1250', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '22', '-', '-');
+insert into lessonplan2015 values (248, '5INT2', 20150111, '0820', '0940', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (249, '5INT4', 20150111, '1250', '1400', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (250, '4IBS', 20150112, '0740', '0820', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (251, '5INT2', 20150112, '1250', '1400', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (252, '4IBS', 20150113, '0815', '0925', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (253, '5INT4', 20150113, '1000', '1035', '35', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (254, '4INT4', 20150113, '1215', '1325', '70', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (255, '4IBS', 20150114, '0740', '0820', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (256, '4INT4', 20150114, '1130', '1250', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (257, '5INT2', 20150115, '0900', '0940', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (258, '5INT4', 20150115, '1130', '1250', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (259, '4IBS', 20150115, '1250', '1400', '70', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (260, '5INT2', 20150114, '0820', '0940', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (261, '5INT4', 20150114, '1250', '1400', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (262, '4IBS', 20150115, '0740', '0820', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (263, '5INT2', 20150115, '1250', '1400', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (264, '4IBS', 20150116, '0815', '0925', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (265, '5INT4', 20150116, '1000', '1035', '35', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (266, '4INT4', 20150116, '1215', '1325', '70', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (267, '4IBS', 20150117, '0740', '0820', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (268, '4INT4', 20150117, '1130', '1250', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (269, '5INT2', 20150118, '0900', '0940', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (270, '5INT4', 20150118, '1130', '1250', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (271, '4IBS', 20150118, '1250', '1400', '70', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (272, '5INT2', 20150111, '0820', '0940', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (273, '5INT4', 20150111, '1250', '1400', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (274, '4IBS', 20150112, '0740', '0820', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (275, '5INT2', 20150112, '1250', '1400', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (276, '4IBS', 20150113, '0815', '0925', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (277, '5INT4', 20150113, '1000', '1035', '35', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (278, '4INT4', 20150113, '1215', '1325', '70', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (279, '4IBS', 20150114, '0740', '0820', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (280, '4INT4', 20150114, '1130', '1250', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (281, '5INT2', 20150115, '0900', '0940', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (282, '5INT4', 20150115, '1130', '1250', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (283, '4IBS', 20150115, '1250', '1400', '70', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
+insert into lessonplan2015 values (284, '5INT2', 20150118, '0820', '0940', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (285, '5INT4', 20150118, '1250', '1400', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (286, '4IBS', 20150119, '0740', '0820', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (287, '5INT2', 20150119, '1250', '1400', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (288, '4IBS', 20150120, '0815', '0925', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (289, '5INT4', 20150120, '1000', '1035', '35', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (290, '4INT4', 20150120, '1215', '1325', '70', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (291, '4IBS', 20150121, '0740', '0820', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (292, '4INT4', 20150121, '1130', '1250', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (293, '5INT2', 20150122, '0900', '0940', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (294, '5INT4', 20150122, '1130', '1250', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (295, '4IBS', 20150122, '1250', '1400', '70', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
+insert into lessonplan2015 values (297, '5INT4', 20150125, '1250', '1400', '80', 'Grammar - Parts of Speech', 'Adverbs', 'identify adverbs', 'expand basic sentences using appropriate adverbs', '-', 'Selected notes', 'matching adverbs', 'completing sentences using appropriate adverbs', '-', '-', '-', '03', '-', '-');
+insert into lessonplan2015 values (298, '5INT2', 2015038, '0820', '0940', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '08', '-', '-');
+insert into lessonplan2015 values (299, '5INT4', 2015038, '1250', '1400', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '08', '-', '-');
+insert into lessonplan2015 values (300, '4IBS', 20150309, '0740', '0820', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '08', '-', '-');
+insert into lessonplan2015 values (301, '5INT2', 20150309, '1250', '1400', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '08', '-', '-');
+insert into lessonplan2015 values (302, '4IBS', 20150310, '0815', '0925', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '08', '-', '-');
+insert into lessonplan2015 values (303, '5INT4', 20150310, '1000', '1035', '35', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '08', '-', '-');
+insert into lessonplan2015 values (304, '4INT4', 20150310, '1215', '1325', '70', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '08', '-', '-');
+insert into lessonplan2015 values (305, '4IBS', 20150311, '0740', '0820', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '08', '-', '-');
+insert into lessonplan2015 values (306, '4INT4', 20150311, '1130', '1250', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '08', '-', '-');
+insert into lessonplan2015 values (307, '5INT2', 20150312, '0900', '0940', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '08', '-', '-');
+insert into lessonplan2015 values (308, '5INT4', 20150312, '1130', '1250', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '08', '-', '-');
+insert into lessonplan2015 values (309, '4IBS', 20150312, '1250', '1400', '70', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '08', '-', '-');
 --
 -- Exporting data for  aSQLiteManager
 --
@@ -5738,6 +5798,24 @@ insert into aSQLiteManager values (17, 'select * from lessonplan2015 where date 
 insert into aSQLiteManager values (18, 'select * from lessonplan2015 where week = 14');
 insert into aSQLiteManager values (19, 'select * from lessonplan2015 where week = 23');
 insert into aSQLiteManager values (20, 'select * from lessonplan2015 where week = 22');
+insert into aSQLiteManager values (21, 'select * from lessonplan2015 where week = 2
+01');
+insert into aSQLiteManager values (22, 'select * from lessonplan2015 where week = 01');
+insert into aSQLiteManager values (23, 'select * from lessonplan2015 where week = 02');
+insert into aSQLiteManager values (24, 'select * from lessonplan2015 where week = 2');
+insert into aSQLiteManager values (25, 'select * from lessonplan2015 where week = 1');
+insert into aSQLiteManager values (26, 'delete  from lessonplan2015 where week = 01');
+insert into aSQLiteManager values (27, 'delete  from lessonplan2015 where week = 02');
+insert into aSQLiteManager values (28, 'select * from lessonplan2015 where week = 4');
+insert into aSQLiteManager values (29, 'select * from lessonplan2015 where week = 03');
+insert into aSQLiteManager values (30, '
+select * from lessonplanbank where theme like '%grammar%'');
+insert into aSQLiteManager values (31, '
+select * from lessonplanbank where theme ');
+insert into aSQLiteManager values (32, '
+select * from lessonplan2015 where theme like '%grammar%'');
+insert into aSQLiteManager values (33, '
+select * from lessonplan2015 where week like '03'');
 --
 -- Exporting data for  aku
 --
