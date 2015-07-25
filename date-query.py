@@ -5,8 +5,8 @@ import datetime
 import io
 import sys
 
-db = SqliteDatabase('lessonplan2010.db', **{})
-#db = SqliteDatabase('/storage/extSdCard/englishdb/lessonplan2010.db', **{})
+#db = SqliteDatabase('lessonplan2010.db', **{})
+db = SqliteDatabase('/storage/extSdCard/englishdb/lessonplan2010.db', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -51,5 +51,5 @@ u = Lessonplan2015.select().where(Lessonplan2015.date ==\
                                   tarikh).order_by(Lessonplan2015.timestart)
 
 for i in u:
-    print i.tingkatan+" : "+i.timestart, i.timeend+" (Theme: )"+i.theme+"\
-            (Topic: )"+i.topic
+    print i.tingkatan+" : "+i.timestart+"-"+i.timeend+" Theme: "+i.theme+"\
+            Topic:"+i.topic
