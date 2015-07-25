@@ -1,3 +1,6 @@
+#qpy:console
+import site
+
 from peewee import *
 import time
 import datetime
