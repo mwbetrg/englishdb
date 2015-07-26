@@ -103,6 +103,10 @@ CREATE TABLE aSQLiteManager (_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQ
 --
 CREATE TABLE aku (text);
 --
+-- Exporting table definitions for reflections
+--
+CREATE TABLE reflections(note varchar(300), class varchar(15), time datetime default current_timestamp);
+--
 -- Exporting data for  lessonplan2010
 --
 insert into lessonplan2010 values (1, '4 Int 6', 20100103, '0820', '0940', '80', 'Introduction', 'SPM Syllabus', 'get an overview of the SPM level syllabus', 'develop own strategies to excel in English', '-', 'SPM Syllabus', 'Class discussion', '-', 'Learning how to learn', '-', '-', '01', '-', '-');
@@ -1185,6 +1189,7 @@ insert into lessonplanbank values (587, '5', 'average', '40', 'Literature', 'Cat
 insert into lessonplanbank values (588, '5', 'average', '80', 'Literature', 'Catch Us If You Can Mixed Questions', 'review previous chapters', 'identify common keywords used in SPM questions', '-', 'Questions from Sasbadi', 'Individual attempt on questions', 'Class discussion', 'Identifying and giving causes ', '-', '-', null, null, 21);
 insert into lessonplanbank values (589, '5', '-', '40', 'PEPERIKSAAN PERTENGAHAN TAHUN 2015', 'Pendidikan Islam 2', '9.00 - 10.40', '1 2/3 hours', '-', '-', '-', '-', '-', '-', '-', null, null, 14);
 insert into lessonplanbank values (590, '5', '-', '80', 'PEPERIKSAAN PERTENGAHAN TAHUN 2015', 'Pendidikan Islam 1', '11.30 - 12.50', '2 hours', '-', '-', '-', '-', '-', '-', '-', null, null, 14);
+insert into lessonplanbank values (591, 'All', '-', '-', '*** Aidil Fitri 1436 / 2015 Celebration ***', '', '-', '-', '-', '-', '-', '-', '-', '-', '-', null, null, 23);
 --
 -- Exporting data for  f5literature
 --
@@ -5640,9 +5645,9 @@ insert into lessonplan2015 values (171, '4INT4', 20150311, '1130', '1250', '80',
 insert into lessonplan2015 values (172, '5INT2', 20150312, '0900', '0940', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '11', '-', '-');
 insert into lessonplan2015 values (173, '5INT4', 20150312, '1130', '1250', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '11', '-', '-');
 insert into lessonplan2015 values (174, '4IBS', 20150312, '1250', '1400', '70', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '11', '-', '-');
-insert into lessonplan2015 values (175, '5INT4', 20150726, '0820', '0940', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '23', '-', '-');
-insert into lessonplan2015 values (176, '6BI4', 20150726, '1050', '1250', '120', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '23', '-', '-');
-insert into lessonplan2015 values (177, '4INT3', 20150727, '0900', '1020', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '23', '-', '-');
+insert into lessonplan2015 values (175, '5INT4', 20150726, '0820', '0940', '80', 'Literature', 'Catch Chapters 23 - 26', 'understand the plots in those chapters', 'identify the characters in those chapters', '-', 'Notes from Catch Us If You Can reference book', 'Class discussion', '-', 'Identifying Causes and Effects', '-', 'Chapters 27 - 28, exercises:  rearranging plot', '23', '-', '-');
+insert into lessonplan2015 values (176, '6BI4', 20150726, '1050', '1250', '120', 'Speaking', 'Speaking test - group', 'identify the methods of discussion', 'use certain social conventions in the discussion', '-', 'Sample MUET Speaking questions', 'Group discussions', '-', 'Communication skills', '-', '-', '23', '-', '-');
+insert into lessonplan2015 values (177, '4INT3', 20150727, '0900', '1020', '80', 'People and Social Issues', 'Mental Health', 'talk with each other about keeping mentally healthy', 'suggest ways of coping with a problem', '-', 'Chapter 12 of the textbook', 'Group discussion', 'Pair work', 'Thinking skills', '-', '-', '23', '-', '-');
 insert into lessonplan2015 values (178, '5INT2', 20150727, '1020', '1100', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '23', '-', '-');
 insert into lessonplan2015 values (179, '5INT4', 20150727, '1250', '1400', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '23', '-', '-');
 insert into lessonplan2015 values (180, '5INT2', 20150728, '0815', '0925', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '23', '-', '-');
@@ -5710,9 +5715,9 @@ insert into lessonplan2015 values (241, '4INT4', 20150513, '1130', '1250', '80',
 insert into lessonplan2015 values (242, '5INT2', 20150514, '0900', '0940', '40', 'PEPERIKSAAN PERTENGAHAN TAHUN 2015', 'Pendidikan Islam 2', '9.00 - 10.40', '1 2/3 hours', '-', '-', '-', '-', '-', '-', '-', '14', '-', '-');
 insert into lessonplan2015 values (243, '5INT4', 20150514, '1130', '1250', '80', 'PEPERIKSAAN PERTENGAHAN TAHUN 2015', 'Pendidikan Islam 1', '11.30 - 12.50', '2 hours', '-', '-', '-', '-', '-', '-', '-', '14', '-', '-');
 insert into lessonplan2015 values (244, '4IBS', 20150514, '1250', '1400', '70', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '14', '-', '-');
-insert into lessonplan2015 values (245, '6BI4', 20150725, '0740', '0940', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '22', '-', '-');
-insert into lessonplan2015 values (246, '5INT4', 20150725, '1020', '1100', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '22', '-', '-');
-insert into lessonplan2015 values (247, '5INT2', 20150725, '1130', '1250', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '22', '-', '-');
+insert into lessonplan2015 values (245, '6BI4', 20150725, '0740', '0940', '80', '*** Aidil Fitri 1436 / 2015 Celebration ***', '', '-', '-', '-', '-', '-', '-', '-', '-', '-', '22', '-', '-');
+insert into lessonplan2015 values (246, '5INT4', 20150725, '1020', '1100', '40', '*** Aidil Fitri 1436 / 2015 Celebration ***', '', '-', '-', '-', '-', '-', '-', '-', '-', '-', '22', '-', '-');
+insert into lessonplan2015 values (247, '5INT2', 20150725, '1130', '1250', '80', '*** Aidil Fitri 1436 / 2015 Celebration ***', '', '-', '-', '-', '-', '-', '-', '-', '-', '-', '22', '-', '-');
 insert into lessonplan2015 values (248, '5INT2', 20150111, '0820', '0940', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
 insert into lessonplan2015 values (249, '5INT4', 20150111, '1250', '1400', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
 insert into lessonplan2015 values (250, '4IBS', 20150112, '0740', '0820', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '01', '-', '-');
@@ -5762,8 +5767,8 @@ insert into lessonplan2015 values (293, '5INT2', 20150122, '0900', '0940', '40',
 insert into lessonplan2015 values (294, '5INT4', 20150122, '1130', '1250', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
 insert into lessonplan2015 values (295, '4IBS', 20150122, '1250', '1400', '70', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '02', '-', '-');
 insert into lessonplan2015 values (297, '5INT4', 20150125, '1250', '1400', '80', 'Grammar - Parts of Speech', 'Adverbs', 'identify adverbs', 'expand basic sentences using appropriate adverbs', '-', 'Selected notes', 'matching adverbs', 'completing sentences using appropriate adverbs', '-', '-', '-', '03', '-', '-');
-insert into lessonplan2015 values (298, '5INT2', 2015038, '0820', '0940', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '08', '-', '-');
-insert into lessonplan2015 values (299, '5INT4', 2015038, '1250', '1400', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '08', '-', '-');
+insert into lessonplan2015 values (298, '5INT2', 20150308, '0820', '0940', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '08', '-', '-');
+insert into lessonplan2015 values (299, '5INT4', 20150308, '1250', '1400', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '08', '-', '-');
 insert into lessonplan2015 values (300, '4IBS', 20150309, '0740', '0820', '40', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '08', '-', '-');
 insert into lessonplan2015 values (301, '5INT2', 20150309, '1250', '1400', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '08', '-', '-');
 insert into lessonplan2015 values (302, '4IBS', 20150310, '0815', '0925', '80', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '08', '-', '-');
@@ -5816,9 +5821,14 @@ insert into aSQLiteManager values (32, '
 select * from lessonplan2015 where theme like '%grammar%'');
 insert into aSQLiteManager values (33, '
 select * from lessonplan2015 where week like '03'');
+insert into aSQLiteManager values (34, 'CREATE TABLE reflections(note varchar(300), class varchar(15), time datetime default current_timestamp)');
 --
 -- Exporting data for  aku
 --
+--
+-- Exporting data for  reflections
+--
+insert into reflections values ('Radhiah has problem understanding Catch', '5int4', '2015-07-26 01:37:10');
 --
 -- Exporting view definitions for lp2015desc
 --
