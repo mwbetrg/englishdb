@@ -5829,6 +5829,30 @@ insert into aSQLiteManager values (34, 'CREATE TABLE reflections(note varchar(30
 -- Exporting data for  reflections
 --
 insert into reflections values ('Everybody is active in discussing the topic for presentation', '6', '2015-07-26 11:37:54.765605');
+insert into reflections values ('I want present about...', '6', '2015-07-26 11:50:31.566481');
+insert into reflections values ('First group : Amir Nazhih', '6', '2015-07-26 11:51:02.391166');
+insert into reflections values ('First group : kuih raya', '6', '2015-07-26 11:51:49.978443');
+insert into reflections values ('More easy', '6', '2015-07-26 11:52:18.973871');
+insert into reflections values ('Voice projection is not good', '6', '2015-07-26 11:52:55.818617');
+insert into reflections values ('Pronunciation not good', '6', '2015-07-26 11:54:00.061203');
+insert into reflections values ('Second group; Firecracker - Sharil', '6', '2015-07-26 11:56:54.438914');
+insert into reflections values ('2nd presenter from 2nd group is much better', '6', '2015-07-26 11:58:21.247041');
+insert into reflections values ('3rd group: Khairina , Naji, Alia', '6', '2015-07-26 12:06:05.829462');
+insert into reflections values ('3rd group: beauty product', '', '2015-07-26 12:06:57.231866');
+insert into reflections values ('Naji starts', '6', '2015-07-26 12:07:33.722281');
+insert into reflections values ('Depends too much on notes', '6', '2015-07-26 12:08:33.680348');
+insert into reflections values ('Ingredients used', '6', '2015-07-26 12:09:51.111956');
+insert into reflections values ('Group 4: shirts / printing', '6', '2015-07-26 12:14:05.435212');
+insert into reflections values ('Media social', '6', '2015-07-26 12:14:50.405882');
+insert into reflections values ('Depends on notes', '6', '2015-07-26 12:16:36.581111');
+insert into reflections values ('Group 5: Pok Jat - food', '6', '2015-07-26 12:21:12.873875');
+insert into reflections values ('Group 6: food', '6', '2015-07-26 12:22:03.318778');
+insert into reflections values ('No eye contact with the audience', '6', '2015-07-26 12:25:58.566924');
+insert into reflections values ('Group 6: Cheese Roti John - Beto', '6', '2015-07-26 12:29:10.784107');
+insert into reflections values ('Good gestures', '6', '2015-07-26 12:30:13.362367');
+insert into reflections values ('Group 7: tuition', '6', '2015-07-26 12:35:28.489005');
+insert into reflections values ('Group 9: counsellor - beauty products', '9', '2015-07-26 12:36:53.863004');
+insert into reflections values ('Radhiah still has no idea of the novel Catch Us If You Can', '5int4', '2015-07-26 13:08:09.677068');
 --
 -- Exporting view definitions for lp2015desc
 --
