@@ -5,7 +5,9 @@ import site
 from peewee import *
 import datetime
 
-database = SqliteDatabase('lessonplan2010.db', **{})
+#database = SqliteDatabase('lessonplan2010.db', **{})
+
+database = SqliteDatabase('/storage/extSdCard/englishdb/lessonplan2010.db', **{})
 
 class BaseModel(Model):
     class Meta:

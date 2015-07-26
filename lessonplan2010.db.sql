@@ -105,7 +105,7 @@ CREATE TABLE aku (text);
 --
 -- Exporting table definitions for reflections
 --
-CREATE TABLE reflections(note varchar(300), class varchar(15), time datetime default current_timestamp);
+CREATE TABLE reflections(note varchar(300), kelas varchar(15), time datetime default current_timestamp);
 --
 -- Exporting data for  lessonplan2010
 --
@@ -5828,7 +5828,7 @@ insert into aSQLiteManager values (34, 'CREATE TABLE reflections(note varchar(30
 --
 -- Exporting data for  reflections
 --
-insert into reflections values ('Radhiah has problem understanding Catch', '5int4', '2015-07-26 01:37:10');
+insert into reflections values ('Everybody is active in discussing the topic for presentation', '6', '2015-07-26 11:37:54.765605');
 --
 -- Exporting view definitions for lp2015desc
 --
