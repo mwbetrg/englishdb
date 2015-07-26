@@ -45,7 +45,7 @@ CREATE TABLE [wotd] (
 [word] TEXT NOT NULL UNIQUE, 
 [part] TEXT, 
 [sentence] TEXT,
-[date] TEXT, meaning default '-');
+[date] TEXT, meaning default '-', id integer primarykey);
 --
 -- Exporting table definitions for totd
 --
@@ -60,7 +60,7 @@ CREATE TABLE [iotd] (
 [idiom] TEXT NOT NULL UNIQUE, 
 [meaning] TEXT, 
 [sentence] TEXT,
-[date] TEXT);
+[date] TEXT, id integer primarykey);
 --
 -- Exporting data for  questionsmaster
 --
@@ -184,32 +184,33 @@ insert into questionsfb values ('P : a structure that juts out to the sea used f
 --
 -- Exporting data for  wotd
 --
-insert into wotd values ('ingenious', 'adjective', null, '20150718', '-');
-insert into wotd values ('mastermind', 'verb', null, '20150720', '-');
-insert into wotd values ('reflect', 'verb', null, '20150717', '-');
-insert into wotd values ('mumble', 'verb', null, '20150713', '-');
-insert into wotd values ('slender', 'adjective ', null, '20150714', '-');
-insert into wotd values ('superstition ', 'noun', null, '20150712', '-');
-insert into wotd values ('courteous', 'adjective', null, '20150711', '-');
-insert into wotd values ('timely', 'adjective ', null, '20150710', '-');
-insert into wotd values ('contentious ', 'adjective ', null, '20150709', '-');
-insert into wotd values ('humane', 'adjective ', null, '20150708', '-');
-insert into wotd values ('brazen', 'adjective', null, '20150707', '-');
-insert into wotd values ('misdemeanor ', 'adjective ', null, '20150706', '-');
-insert into wotd values ('outright', 'adjective ', null, '20150705', '-');
-insert into wotd values ('attached ', 'adjective ', null, '20150704', '-');
-insert into wotd values ('plight ', 'noun ', null, '20150703', '-');
-insert into wotd values ('pleasure ', 'noun', null, '20150719', '-');
-insert into wotd values ('gauge', 'verb', null, '20150701', '-');
-insert into wotd values ('profound ', 'adjective ', null, '20150702', '-');
-insert into wotd values ('unprecedented ', 'adjective ', null, '20150630', '-');
-insert into wotd values ('outbreak ', 'noun', 'Decreased tourist revenues are believed to be the result of the SARS \textcolor{blue}{outbreak} in Canada.', '20150721', 'a sudden occurrence of something unwelcome, such as war or disease');
-insert into wotd values ('enthusiastic ', 'adjective ', 'Mat could be wildly \textcolor{blue}{enthusiastic}  about a project.', '20150722', 'having or showing intense and eager enjoyment, interest, or approval');
-insert into wotd values ('entitle', 'verb', 'Employees are normally \textcolor{blue}{entitled} to bonus pay annually.', '20150723', '(often be entitled to) give (someone) a legal right or a just claim to receive or do something');
-insert into wotd values ('equal', 'adjective ', 'People are born free and \textcolor{blue}{equal}.', '20150724', '(of people) having the same status, rights, or opportunities');
-insert into wotd values ('heed', 'verb', 'He should have \textcolor{blue}{heeded} the warnings.', '20150725', 'pay attention to; take notice of');
-insert into wotd values ('withdrawn', 'adjective', 'When her husband died she became very \textcolor{blue}{withdrawn}.', '20150726', 'not wanting to communicate with other people');
-insert into wotd values ('penchant', 'noun', 'He has a \textcolor{blue}{penchant} for adopting stray dogs.', '20150727', 'a strong or habitual liking for something or tendency to do something');
+insert into wotd values ('ingenious', 'adjective', null, '20150718', '-', null);
+insert into wotd values ('mastermind', 'verb', null, '20150720', '-', null);
+insert into wotd values ('reflect', 'verb', null, '20150717', '-', null);
+insert into wotd values ('mumble', 'verb', null, '20150713', '-', null);
+insert into wotd values ('slender', 'adjective ', null, '20150714', '-', null);
+insert into wotd values ('superstition ', 'noun', null, '20150712', '-', null);
+insert into wotd values ('courteous', 'adjective', null, '20150711', '-', null);
+insert into wotd values ('timely', 'adjective ', null, '20150710', '-', null);
+insert into wotd values ('contentious ', 'adjective ', null, '20150709', '-', null);
+insert into wotd values ('humane', 'adjective ', null, '20150708', '-', null);
+insert into wotd values ('brazen', 'adjective', null, '20150707', '-', null);
+insert into wotd values ('misdemeanor ', 'adjective ', null, '20150706', '-', null);
+insert into wotd values ('outright', 'adjective ', null, '20150705', '-', null);
+insert into wotd values ('attached ', 'adjective ', null, '20150704', '-', null);
+insert into wotd values ('plight ', 'noun ', null, '20150703', '-', null);
+insert into wotd values ('pleasure ', 'noun', null, '20150719', '-', null);
+insert into wotd values ('gauge', 'verb', null, '20150701', '-', null);
+insert into wotd values ('profound ', 'adjective ', null, '20150702', '-', null);
+insert into wotd values ('unprecedented ', 'adjective ', null, '20150630', '-', null);
+insert into wotd values ('outbreak ', 'noun', 'Decreased tourist revenues are believed to be the result of the SARS \textcolor{blue}{outbreak} in Canada.', '20150721', 'a sudden occurrence of something unwelcome, such as war or disease', null);
+insert into wotd values ('enthusiastic ', 'adjective ', 'Mat could be wildly \textcolor{blue}{enthusiastic}  about a project.', '20150722', 'having or showing intense and eager enjoyment, interest, or approval', null);
+insert into wotd values ('entitle', 'verb', 'Employees are normally \textcolor{blue}{entitled} to bonus pay annually.', '20150723', '(often be entitled to) give (someone) a legal right or a just claim to receive or do something', null);
+insert into wotd values ('equal', 'adjective ', 'People are born free and \textcolor{blue}{equal}.', '20150724', '(of people) having the same status, rights, or opportunities', null);
+insert into wotd values ('heed', 'verb', 'He should have \textcolor{blue}{heeded} the warnings.', '20150725', 'pay attention to; take notice of', null);
+insert into wotd values ('withdrawn', 'adjective', 'When her husband died she became very \textcolor{blue}{withdrawn}.', '20150726', 'not wanting to communicate with other people', null);
+insert into wotd values ('penchant', 'noun', 'He has a \textcolor{blue}{penchant} for adopting stray cats.', '20150727', 'a strong or habitual liking for something or tendency to do something', null);
+insert into wotd values ('twisted', 'adjective', 'a man with a \textcolor{blue}{twisted} mind.', '20150728', '(of a personality or a way of thinking) unpleasantly or unhealthily abnormal', null);
 --
 -- Exporting data for  totd
 --
@@ -217,16 +218,16 @@ insert into totd values ('borrow vs lend', 'Can you borrow me some money?', '201
 --
 -- Exporting data for  iotd
 --
-insert into iotd values ('can't stand the pace', 'If you can't stand the pace, you are unable to do things well when there is a lot of pressure', 'She once worked for a famous fashion designer but she \textcolor{blue}{couldn't stand the pace}.', '20150721');
-insert into iotd values ('call the shots', 'The person who calls the shots is the one who makes all the important decisions and is in control of the situation', 'Ronnie shows a lot of authority but in fact it's his wife who \textcolor{blue}{calls the shots}.', '20150722');
-insert into iotd values ('cherry pick', 'When you cherry pick, you choose something with great care and select only the best', 'Top university graduates are often \textcolor{blue}{cherry-picked} by large companies.', '20150723');
-insert into iotd values ('blue-eyed boy', 'A blue-eyed boy is someone's favourite', 'He's the director's \textcolor{blue}{blue-eyed boy}!', '20150724');
-insert into iotd values ('hit the dust', 'The expression hit the dust is a humorous way of referring to death', 'You can have my computer when I \textcolor{blue}{hit the dust}!', '20150725');
-insert into iotd values ('balancing act', 'When you try to satisfy two or more people or groups who have different needs, and keep everyone happy, you perform abalancing act', 'Many people, especially women,  have to perform a \textcolor{blue}{balancing act}  between work and family. ', '20150726');
-insert into iotd values ('raining cats and dogs', 'If it's raining cats and dogs, it is raining very heavily', 'We'll have to cancel the picnic at Sekayu I'm afraid - it's \textcolor{blue}{raining cats and dogs}.', '20150727');
-insert into iotd values (' beyond redemption', 'If something is beyond redemption, it is in such a poor state that there is no hope of improvement or recovery', 'With the latest scandal, the government's reputation is now \textcolor{blue}{beyond redemption}.', '20150728');
-insert into iotd values ('black out', 'If you black out, you lose consciousness', 'When Indah Harlina saw the needle, she \textcolor{blue}{blacked out}.', '20150729');
-insert into iotd values ('at the eleventh hour', 'If something happens at the eleventh hour, it happens when it is almost too late, or at the last possible moment', 'Our team won after they scored a goal \textcolor{blue}{at the eleventh hour}.', '20150730');
+insert into iotd values ('can't stand the pace', 'If you can't stand the pace, you are unable to do things well when there is a lot of pressure', 'She once worked for a famous fashion designer but she \textcolor{blue}{couldn't stand the pace}.', '20150721', null);
+insert into iotd values ('call the shots', 'The person who calls the shots is the one who makes all the important decisions and is in control of the situation', 'Ronnie shows a lot of authority but in fact it's his wife who \textcolor{blue}{calls the shots}.', '20150722', null);
+insert into iotd values ('cherry pick', 'When you cherry pick, you choose something with great care and select only the best', 'Top university graduates are often \textcolor{blue}{cherry-picked} by large companies.', '20150723', null);
+insert into iotd values ('blue-eyed boy', 'A blue-eyed boy is someone's favourite', 'He's the director's \textcolor{blue}{blue-eyed boy}!', '20150724', null);
+insert into iotd values ('hit the dust', 'The expression hit the dust is a humorous way of referring to death', 'You can have my computer when I \textcolor{blue}{hit the dust}!', '20150725', null);
+insert into iotd values ('balancing act', 'When you try to satisfy two or more people or groups who have different needs, and keep everyone happy, you perform a balancing act', 'Many people, especially women,  have to perform a \textcolor{blue}{balancing act} between work and family.', '20150726', null);
+insert into iotd values ('raining cats and dogs', 'If it's raining cats and dogs, it is raining very heavily', 'We'll have to cancel the picnic at Sekayu I'm afraid - it's \textcolor{blue}{raining cats and dogs}.', '20150727', null);
+insert into iotd values ('beyond redemption', 'If something is beyond redemption, it is in such a poor state that there is no hope of improvement or recovery', 'With the latest scandal, the government's reputation is now \textcolor{blue}{beyond redemption}.', '20150728', null);
+insert into iotd values ('black out', 'If you black out, you lose consciousness', 'When Indah Harlina saw the needle, she \textcolor{blue}{blacked out}.', '20150729', null);
+insert into iotd values ('at the eleventh hour', 'If something happens at the eleventh hour, it happens when it is almost too late, or at the last possible moment', 'Our team won after they scored a goal \textcolor{blue}{at the eleventh hour}.', '20150730', null);
 --
 -- Exporting view definitions for wotddate
 --
