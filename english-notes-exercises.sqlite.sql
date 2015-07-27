@@ -211,6 +211,9 @@ insert into wotd values ('heed', 'verb', 'He should have \textcolor{blue}{heeded
 insert into wotd values ('withdrawn', 'adjective', 'When her husband died she became very \textcolor{blue}{withdrawn}.', '20150726', 'not wanting to communicate with other people', null);
 insert into wotd values ('penchant', 'noun', 'He has a \textcolor{blue}{penchant} for adopting stray cats.', '20150727', 'a strong or habitual liking for something or tendency to do something', null);
 insert into wotd values ('twisted', 'adjective', 'a man with a \textcolor{blue}{twisted} mind.', '20150728', '(of a personality or a way of thinking) unpleasantly or unhealthily abnormal', null);
+insert into wotd values ('rampant', 'adjective', 'Political violence was \textcolor{blue}{rampant} in that country.', '20150729', '(especially of something unwelcome) flourishing or spreading unchecked', null);
+insert into wotd values ('acrimony', 'noun', 'The annual meeting dissolved into \textcolor{blue}{acrimony}.', '20150729', 'bitterness or ill feeling', null);
+insert into wotd values ('falter', 'verb', 'The music from the CD player  \textcolor{blue}{faltered}, stopped, and started up again.', '20150730', 'lose strength or momentum', null);
 --
 -- Exporting data for  totd
 --
