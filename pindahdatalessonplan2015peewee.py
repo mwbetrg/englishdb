@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #Created : Sun 04 Jan 2009 05:47:20 AM GMT
-#Last Modified : Mon 27 Jul 2015 08:52:35 AM UTC
+#Last Modified : Sun 26 Jul 2015 02:07:30 PM UTC
 
 import os
 import sys
@@ -35,14 +35,14 @@ print "=" * 34
 lid = raw_input("\nPlease enter LESSON PLAN ID: \n")
 
 cur02.execute("""select
-              tingkatan,theme,topic,lo1,lo2,lo3,content,activity1,activity2,assimilation,impact
+              tingkatan,theme,topic,lo1,lo2,lo3,content,activity1,activity2,assimilation,impact,note
               from lessonplanbank  where bank_id =? """, (selectid,) )
 hasilbankid = cur02.fetchall()
-for form,theme,topic,lo1,lo2,lo3,content,activity1,activity2,assimilation,impact in hasilbankid:
+for form,theme,topic,lo1,lo2,lo3,content,activity1,activity2,assimilation,impact,note in hasilbankid:
     cur01.execute("""
               update lessonplan2015 set theme=?,topic=?, lo1 = ?, lo2 = ?,lo3
               = ?,content = ?,activity1 = ?,activity2 = ?,assimilation =
-              ?,impact = ? where id =?""",(theme,topic,lo1,lo2,lo3,content,activity1,activity2,assimilation,impact,lid))
+              ?,impact = ?,note = ? where id =?""",(theme,topic,lo1,lo2,lo3,content,activity1,activity2,assimilation,impact,note,lid))
 con01.commit()
 
 cur01.execute("""
