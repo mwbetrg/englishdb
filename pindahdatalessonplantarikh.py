@@ -11,10 +11,14 @@ import sys
 from time import strftime
 import sqlite3
 
-con01 = sqlite3.connect("/usb/phpmysql/lessonplan2010.db")
+#con01 = sqlite3.connect("/usb/phpmysql/lessonplan2010.db")
+#cur01 = con01.cursor()
+con01 = sqlite3.connect("/storage/extSdCard/englishdb/lessonplan2010.db")
 cur01 = con01.cursor()
 
-con02 = sqlite3.connect("/usb/phpmysql/lessonplanbank.db")
+#con02 = sqlite3.connect("/usb/phpmysql/lessonplanbank.db")
+#cur02 = con02.cursor()
+con02 = sqlite3.connect("/storage/extSdCard/englishdb/lessonplan2010.db")
 cur02 = con02.cursor()
 
 tahunini = strftime("%Y") 
@@ -29,7 +33,7 @@ cur01.execute("""select
 hasilbankid = cur01.fetchall()
 for form,theme,topic,lo1,lo2,content,activity1,activity2,assimilation,impact in hasilbankid:
     cur01.execute("""
-              update lessonplan2013 set theme=?,topic=?, lo1 = ?, lo2 = ?,
+              update lessonplan2015 set theme=?,topic=?, lo1 = ?, lo2 = ?,
               content = ?,activity1 = ?,activity2 = ?,assimilation =
               ?,impact = ? where date 
                   =?""",(theme,topic,lo1,lo2,content,activity1,activity2,assimilation,impact,tarikh_sebenar))
@@ -39,7 +43,7 @@ print "-" * 60
 cur01.execute("""
               select tingkatan,date,timestart,timeend,theme,topic,lo1,lo2,lo3,
               content,activity1,activity2,assimilation,
-              impact,note from lessonplan2013
+              impact,note from lessonplan2015
               where date = ?
              """, (tarikh_sebenar,))
 hasilsepatutnya = cur01.fetchall()
