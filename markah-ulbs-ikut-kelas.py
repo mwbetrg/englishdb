@@ -1,4 +1,4 @@
-#!/usr/bin/python
+!#!/usr/bin/python
 #Created : Tue 28 Jul 2015 12:38:07 PM MYT
 #Last Modified : Wed 29 Jul 2015 09:14:40 AM UTC
 
