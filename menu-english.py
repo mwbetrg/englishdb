@@ -25,11 +25,11 @@ from peewee import *
 
 #database = SqliteDatabase('english-notes-exercises.sqlite', **{})
 
-database = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
+db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
 
 class BaseModel(Model):
     class Meta:
-        database = database
+        database = db
 
 class Iotd(BaseModel):
     date = TextField(null=True)
@@ -98,7 +98,7 @@ class Wotd(BaseModel):
 
 
 
-database.connect()
+db.connect()
 
 #-----------------------------------------------------------------------    
 
