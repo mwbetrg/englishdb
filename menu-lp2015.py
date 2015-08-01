@@ -23,7 +23,7 @@ import calendar
 #-----------------------------------------------------------------------    
 
 #db = SqliteDatabase('lessonplan2010.db', **{})
-database = SqliteDatabase('/storage/extSdCard/mydb/lessonplan2010.db', **{})
+db = SqliteDatabase('/storage/extSdCard/mydb/lessonplan2010.db', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -400,8 +400,8 @@ def viewdate():
 
     print "="*40
     for i in u:
-        print i.tingkatan+" : "+i.timestart+"-"+i.timeend+" Theme: "+i.theme+"\
-            Topic:"+i.topic
+        print "("+i.id+")"+i.tingkatan+" : "+i.timestart+"-"+i.timeend+" Theme: "+i.theme+"\
+            Topic:"+str(i.topic)
     print "="*40
     print "9. Back"
     print "0. Quit" 
