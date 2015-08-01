@@ -23,7 +23,7 @@ import calendar
 #-----------------------------------------------------------------------    
 
 #db = SqliteDatabase('lessonplan2010.db', **{})
-database = SqliteDatabase('/storage/extSdCard/mydb/lessonplan2010.db', **{})
+db = SqliteDatabase('/storage/extSdCard/mydb/lessonplan2010.db', **{})
 
 class BaseModel(Model):
     class Meta:
