@@ -15,19 +15,21 @@
 
 import site
 import sys, os
-from peewee import *
 import datetime
+import time
 import calendar
+from peewee import *
 
 
 #-----------------------------------------------------------------------    
 
-db = SqliteDatabase('english-notes-exercises.sqlite', **{})
+database = SqliteDatabase('english-notes-exercises.sqlite', **{})
+
 #db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
 
 class BaseModel(Model):
     class Meta:
-        database = db
+        database = database
 
 class Iotd(BaseModel):
     date = TextField(null=True)
@@ -96,7 +98,7 @@ class Wotd(BaseModel):
 
 
 
-db.connect()
+database.connect()
 
 #-----------------------------------------------------------------------    
 
@@ -199,6 +201,56 @@ def addidiom():
     exec_menu(choice)
     return
 
+# Write Word
+
+def writeword():
+    tarikh = (time.strftime("%Y%m%d"))
+    sdir = "/storage/extSdCard/texdocs/wotd/"
+    failtex = sdir+"wotd-"+tarikh+".tex"
+    failkeluar = open(failtex, "w")  
+    print tarikh
+    w = Wotd.select().where(Wotd.date == tarikh)
+
+    print >>failkeluar,"\documentclass[12pt,a5paper]{article}\n\
+    \usepackage{palatino}\n\
+    \usepackage{nopageno}\n\
+    \usepackage{floatflt}\n\
+    \usepackage[top=1.5cm,bottom=2cm, left=1.5cm,right=1.5cm]{geometry}\n\
+    \usepackage{pdflscape,soul}\n\
+    \usepackage{pifont}\n\
+    \usepackage{graphicx}\n\
+    \usepackage{xcolor}\n\
+    \setlength\parindent{0pt}\n\n\
+    \\begin{document}\n\n\
+    \\begin{landscape}\n\
+    \\Huge\n\
+    \\centerline{\\textcolor{orange}{\\so{WORD(S) OF THE DAY}}}\n\
+    \\medskip\n\
+    \\begin{center}\n"
+    for i in w:
+        print i.word+"\n"+i.meaning+"\n"+i.sentence
+        print >>failkeluar,"\\textbf{\\so{%s}} \n\n \\medskip" % i.word
+        print >>failkeluar,"\\begin{minipage}{14cm}  \\textcolor{magenta}{[%s]}  \\textit{%s} " \
+        %  (i.part, i.meaning)
+        print >>failkeluar,"\\end{minipage} \n\n\
+        \\medskip \n\
+        \\begin{minipage}{14cm}\n\
+        \\begin{center}\n"
+        print >>failkeluar,"\\texttt{%s}\n\n"   % i.sentence
+        print >>failkeluar,"\\end{center} \\end{minipage}\n\n\
+        \\vfill\n\n\
+        \\includegraphics[scale=0.5]{ornamental-flower-horizontal.jpg} \
+        \\includegraphics[scale=0.5]{ornamental-flower-horizontal.jpg}\n\
+        \\end{center}\n\n\
+        \\end{landscape}\n\n\
+        \\end{document}"
+    failkeluar.close()
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+
 
 #-----------------------------------------------------------------------    
 
@@ -231,6 +283,7 @@ menu_actions = {
     'ai': addidiom,
     'it': idiomtomorrow,
     'wt': wordtomorrow,
+    'ww': writeword,
     '9': back,
     '0': exit,
 }
