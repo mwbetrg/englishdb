@@ -141,8 +141,6 @@ def exec_menu(choice):
 # Word for tomorrow
 def wordtomorrow():
     print "wotd for tomorrow\n"
-    #choice = raw_input(" >>  ")
-    #exec_menu(choice)
     today = datetime.datetime.today()
     tomorrow = today + datetime.timedelta(days=1)
     esok = tomorrow.strftime("%y%m%d")
@@ -165,6 +163,38 @@ def idiomtomorrow():
     print "9. Back"
     print "0. Quit" 
     return
+
+# Add word 
+def addword():
+    print "Word Of The Day"
+    kata = raw_input("Enter new word: \n")
+    jenis = raw_input("Enter the part of speech: \n")
+    makna = raw_input("Enter the meaning: \n")
+    ayat = raw_input("Enter the sentence [identify textcolor] :\n")
+    tarikh = raw_input("Enter the date [YYYYMMDD]:\n")
+    simpan = Wotd.insert(word=kata, part=jenis, meaning=makna,\
+                         date=tarikh,sentence=ayat).execute()
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+
+# Add idiom 
+def addidiom():
+    print "Idiom Of The Day"
+    peribahasa = raw_input("Enter new idiom: \n")
+    makna = raw_input("Enter the meaning: \n")
+    ayat = raw_input("Enter the sentence [identify textcolor] :\n")
+    tarikh = raw_input("Enter the date [YYYYMMDD]:\n")
+    simpan = Iotd.insert(idiom=peribahasa,  meaning=makna,\
+                         date=tarikh,sentence=ayat).execute()
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+
 
 #-----------------------------------------------------------------------    
 
@@ -193,6 +223,8 @@ def exit():
 
 # Menu definition
 menu_actions = {
+    'aw': addword,
+    'ai': addidiom,
     'it': idiomtomorrow,
     'wt': wordtomorrow,
     '9': back,
