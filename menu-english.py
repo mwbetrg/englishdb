@@ -22,8 +22,8 @@ import calendar
 
 #-----------------------------------------------------------------------    
 
-db = SqliteDatabase('english-notes-exercises.sqlite', **{})
-#db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
+#db = SqliteDatabase('english-notes-exercises.sqlite', **{})
+db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
 
 class BaseModel(Model):
     class Meta:
