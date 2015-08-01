@@ -22,8 +22,8 @@ import calendar
 
 #-----------------------------------------------------------------------    
 
-#db = SqliteDatabase('english-notes-exercises.sqlite', **{})
-db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
+db = SqliteDatabase('english-notes-exercises.sqlite', **{})
+#db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -143,7 +143,7 @@ def wordtomorrow():
     print "wotd for tomorrow\n"
     today = datetime.datetime.today()
     tomorrow = today + datetime.timedelta(days=1)
-    esok = tomorrow.strftime("%y%m%d")
+    esok = tomorrow.strftime("%Y%m%d")
     w = Wotd.select().where(Wotd.date == esok)
     for i in w:
         print "\n["+i.date+"] "+i.word+" ("+i.meaning+") : "+i.sentence
@@ -156,7 +156,7 @@ def idiomtomorrow():
     print "iotd for tomorrow\n"
     today = datetime.datetime.today()
     tomorrow = today + datetime.timedelta(days=1)
-    esok = tomorrow.strftime("%y%m%d")
+    esok = tomorrow.strftime("%Y%m%d")
     w = Iotd.select().where(Iotd.date == esok)
     for i in w:
         print "\n["+i.date+"] "+i.idiom+" ("+i.meaning+") : "+i.sentence
