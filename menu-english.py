@@ -149,6 +149,8 @@ def wordtomorrow():
         print "\n["+i.date+"] "+i.word+" ("+i.meaning+") : "+i.sentence
     print "9. Kembali"
     print "0. Keluar"
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
     return
 
 # Idiom for tomorrow
@@ -162,6 +164,8 @@ def idiomtomorrow():
         print "\n["+i.date+"] "+i.idiom+" ("+i.meaning+") : "+i.sentence
     print "9. Back"
     print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
     return
 
 # Add word 
