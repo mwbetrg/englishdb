@@ -22,8 +22,8 @@ import calendar
 
 #-----------------------------------------------------------------------    
 
-#db = SqliteDatabase('lessonplan2010.db', **{})
-db = SqliteDatabase('/storage/extSdCard/mydb/lessonplan2010.db', **{})
+db = SqliteDatabase('lessonplan2010.db', **{})
+#database = SqliteDatabase('/storage/extSdCard/englishdb/lessonplan2010.db', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -477,6 +477,45 @@ def searchlptopic():
     exec_menu(choice)
     return
 
+def pindahbankkelp2015():
+    selectid = raw_input("\nPlease enter LP BANK ID\n")
+
+    lp = Lessonplan2015.select().where(Lessonplan2015.theme == '-')
+    for l in lp:
+        print "("+str(l.id)+")", str(l.date)+" : "+ l.tingkatan, l.timestart,\
+        l.timeend+" ["+l.duration+" minutes] "
+
+    selectlpid = raw_input("\nPlease enter LP 2015 ID\n")
+
+    stok = Lessonplanbank.select().where(Lessonplanbank.bank == selectid)
+    for i in stok:
+        query = Lessonplan2015.update(\
+                duration=i.duration,\
+                theme=i.theme,\
+                topic=i.topic,\
+                lo1=i.lo1,\
+                lo2=i.lo2,\
+                lo3=i.lo3,\
+                content=i.content,\
+                activity1=i.activity1,\
+                activity2=i.activity2,\
+                assimilation=i.assimilation).\
+               where(Lessonplan2015.id == selectlpid)
+        query.execute()
+
+    lp2015baru = Lessonplan2015.select().where(Lessonplan2015.id == selectlpid)
+
+    print ""
+    print "=" * 60
+    for j in lp2015baru:
+        print "["+str(j.date)+"]", j.tingkatan
+        print "\t "+j.timestart+" -- "+j.timeend
+        print "\t LO1: "+j.lo1
+        print "\t LO2: "+j.lo2
+        print "\t Content: "+j.content
+        print "\t Activity 1 :"+j.activity1
+        print "\t Activity 2 :"+j.activity2
+    print "=" * 60
 
 def calendarview():
     bulan = raw_input("\nMasukkan bulan [MM]: \n")
@@ -509,6 +548,7 @@ menu_actions = {
     '2': menu2,
     'cv': calendarview,
     'mb': masuklessonplanbank,
+    'pl': pindahbankkelp2015,
     'vw': viewweek,
     'vd': viewdate,
     'sbto': searchbanktopic,
