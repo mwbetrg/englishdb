@@ -25,7 +25,7 @@ from peewee import *
 
 #database = SqliteDatabase('english-notes-exercises.sqlite', **{})
 
-db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
+database = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
 
 class BaseModel(Model):
     class Meta:
