@@ -22,8 +22,8 @@ import calendar
 
 #-----------------------------------------------------------------------    
 
-#db = SqliteDatabase('lessonplan2010.db', **{})
-db = SqliteDatabase('/storage/extSdCard/englishdb/lessonplan2010.db', **{})
+db = SqliteDatabase('lessonplan2010.db', **{})
+#database = SqliteDatabase('/storage/extSdCard/englishdb/lessonplan2010.db', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -427,6 +427,57 @@ def viewweek():
     exec_menu(choice)
     return
 
+#-----------------------------------------------------------------------    
+
+def searchbanktheme():
+    print "Cari tema daripada bank\n"
+    tema = raw_input("Masukkan tema: \n")
+    u = Lessonplanbank.select().where(Lessonplanbank.theme.contains(tema))
+    for i in u:
+        print "("+str(i.bank)+")\t"+"Form: "+i.tingkatan+":"+i.theme+" : "+i.content
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+
+def searchbanktopic():
+    print "Cari topik daripada bank\n"
+    topik = raw_input("Masukkan topik: \n")
+    u = Lessonplanbank.select().where(Lessonplanbank.topic.contains(topik))
+    for i in u:
+        print "("+str(i.bank)+")\t"+"Form: "+i.tingkatan+":"+i.topic+" : "+i.content
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+
+def searchlptheme():
+    print "Cari tema daripada lp\n"
+    tema = raw_input("Masukkan tema: \n")
+    u = Lessonplan2015.select().where(Lessonplan2015.theme.contains(tema))
+    for i in u:
+        print "("+str(i.date)+")\t"+"Form: "+i.tingkatan+":"+i.theme+" : "+i.content
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+
+def searchlptopic():
+    print "Cari topik daripada lp\n"
+    topik = raw_input("Masukkan topik: \n")
+    u = Lessonplan2015.select().where(Lessonplan2015.topic.contains(topik))
+    for i in u:
+        print "("+str(i.date)+")\t"+"Form: "+i.tingkatan+":"+i.topic+" : "+i.content
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+
+
 def calendarview():
     bulan = raw_input("\nMasukkan bulan [MM]: \n")
     tahunini = int(datetime.datetime.now().year)
@@ -436,6 +487,7 @@ def calendarview():
     choice = raw_input(" >>  ")
     exec_menu(choice)
     return
+
     
 
 # Back to main menu
@@ -459,6 +511,10 @@ menu_actions = {
     'mb': masuklessonplanbank,
     'vw': viewweek,
     'vd': viewdate,
+    'sbto': searchbanktopic,
+    'sbth': searchbanktheme,
+    'slto': searchlptopic,
+    'slth': searchlptheme,
     '9': back,
     '0': exit,
 }
