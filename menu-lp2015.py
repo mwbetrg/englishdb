@@ -22,13 +22,8 @@ import calendar
 
 #-----------------------------------------------------------------------    
 
-<<<<<<< HEAD
 db = SqliteDatabase('lessonplan2010.db', **{})
-#database = SqliteDatabase('/storage/extSdCard/mydb/lessonplan2010.db', **{})
-=======
-#db = SqliteDatabase('lessonplan2010.db', **{})
-db = SqliteDatabase('/storage/extSdCard/mydb/lessonplan2010.db', **{})
->>>>>>> 7697b4ec84bc9b222abc6e9f4c69028da1d6f103
+#db = SqliteDatabase('/storage/extSdCard/mydb/lessonplan2010.db', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -527,6 +522,16 @@ def pindahbankkelp2015():
     exec_menu(choice)
     return
 
+def deletelp2015id():
+    lpid = raw_input("Masukkan id Lesson 2015 LP: \n")
+    query = Lessonplan2015.delete().where(Lessonplan2015.id == lpid)
+    query.execute()
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+
 
 def calendarview():
     bulan = raw_input("\nMasukkan bulan [MM]: \n")
@@ -558,6 +563,7 @@ menu_actions = {
     '1': menu1,
     '2': menu2,
     'cv': calendarview,
+    'dl': deletelp2015id,
     'mb': masuklessonplanbank,
     'pl': pindahbankkelp2015,
     'vw': viewweek,
