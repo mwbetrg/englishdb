@@ -23,7 +23,7 @@ import calendar
 #-----------------------------------------------------------------------    
 
 db = SqliteDatabase('lessonplan2010.db', **{})
-#database = SqliteDatabase('/storage/extSdCard/englishdb/lessonplan2010.db', **{})
+#database = SqliteDatabase('/storage/extSdCard/mydb/lessonplan2010.db', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -516,6 +516,12 @@ def pindahbankkelp2015():
         print "\t Activity 1 :"+j.activity1
         print "\t Activity 2 :"+j.activity2
     print "=" * 60
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+
 
 def calendarview():
     bulan = raw_input("\nMasukkan bulan [MM]: \n")
