@@ -23,9 +23,9 @@ from peewee import *
 
 #-----------------------------------------------------------------------    
 
-#database = SqliteDatabase('english-notes-exercises.sqlite', **{})
+db = SqliteDatabase('english-notes-exercises.sqlite', **{})
 
-db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
+#db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -251,6 +251,51 @@ def writeword():
     exec_menu(choice)
     return
 
+def writeidiom():
+    tarikh = (time.strftime("%Y%m%d"))
+    sdir = "/storage/extSdCard/texdocs/iotd/"
+    failtex = sdir+"iotd-"+tarikh+".tex"
+    failkeluar = open(failtex, "w")  
+    print tarikh
+    w = Iotd.select().where(Iotd.date == tarikh)
+
+    print >>failkeluar,"\documentclass[12pt,a5paper]{article}\n\
+    \usepackage{palatino}\n\
+    \usepackage{nopageno}\n\
+    \usepackage{floatflt}\n\
+    \usepackage[top=1.5cm,bottom=2cm, left=1.5cm,right=1.5cm]{geometry}\n\
+    \usepackage{pdflscape,soul}\n\
+    \usepackage{pifont}\n\
+    \usepackage{graphicx}\n\
+    \usepackage{xcolor}\n\
+    \setlength\parindent{0pt}\n\n\
+    \\begin{document}\n\n\
+    \\begin{landscape}\n\
+    \\Huge\n\
+    \\centerline{\\textcolor{orange}{\\so{WORD(S) OF THE DAY}}}\n\
+    \\medskip\n\
+    \\begin{center}\n"
+    for i in w:
+        print i.idiom+"\n"+i.meaning+"\n"+i.sentence
+        print >>failkeluar,"\\textbf{\\so{%s}} \n\n \\medskip" % i.idiom
+        print >>failkeluar,"\\begin{minipage}{14cm}   \\textit{%s} " \
+        %  i.meaning
+        print >>failkeluar,"\\end{minipage} \n\n\
+        \\medskip \n\
+        \\begin{minipage}{14cm}\n\
+        \\begin{center}\n"
+        print >>failkeluar,"\\texttt{%s}\n\n"   % i.sentence
+        print >>failkeluar,"\\end{center} \\end{minipage}\n\n\
+        \\vfill\n\n\
+        \\end{center}\n\n\
+        \\end{landscape}\n\n\
+        \\end{document}"
+    failkeluar.close()
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
 
 #-----------------------------------------------------------------------    
 
@@ -283,6 +328,7 @@ menu_actions = {
     'ai': addidiom,
     'it': idiomtomorrow,
     'wt': wordtomorrow,
+    'wi': writeidiom,
     'ww': writeword,
     '9': back,
     '0': exit,
