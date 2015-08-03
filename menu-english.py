@@ -253,6 +253,14 @@ def writeword():
 
 def writeidiom():
     tarikh = (time.strftime("%Y%m%d"))
+
+    failtex = "/storage/extSdCard/texdocs/iotd/iotd-"+tarikh+".tex"
+    failkeluar = open(failtex, "w")  
+
+
+    print tarikh
+
+    tarikh = (time.strftime("%Y%m%d"))
     sdir = "/storage/extSdCard/texdocs/iotd/"
     failtex = sdir+"iotd-"+tarikh+".tex"
     failkeluar = open(failtex, "w")  
@@ -263,7 +271,7 @@ def writeidiom():
     \usepackage{palatino}\n\
     \usepackage{nopageno}\n\
     \usepackage{floatflt}\n\
-    \usepackage[top=1.5cm,bottom=2cm, left=1.5cm,right=1.5cm]{geometry}\n\
+    \usepackage[top=3.3cm,bottom=3.3cm, left=0.3cm,right=0.3cm]{geometry}\n\
     \usepackage{pdflscape,soul}\n\
     \usepackage{pifont}\n\
     \usepackage{graphicx}\n\
@@ -276,20 +284,16 @@ def writeidiom():
     \\medskip\n\
     \\begin{center}\n"
     for i in w:
-        print i.idiom+"\n"+i.meaning+"\n"+i.sentence
         print >>failkeluar,"\\textbf{\\so{%s}} \n\n \\medskip" % i.idiom
-        print >>failkeluar,"\\begin{minipage}{14cm}   \\textit{%s} " \
-        %  i.meaning
-        print >>failkeluar,"\\end{minipage} \n\n\
-        \\medskip \n\
-        \\begin{minipage}{14cm}\n\
-        \\begin{center}\n"
+        print >>failkeluar," \\textit{%s} "   %   i.meaning
+        print >>failkeluar,"\\medskip \n"
         print >>failkeluar,"\\texttt{%s}\n\n"   % i.sentence
-        print >>failkeluar,"\\end{center} \\end{minipage}\n\n\
-        \\vfill\n\n\
-        \\end{center}\n\n\
-        \\end{landscape}\n\n\
-        \\end{document}"
+        print >>failkeluar,"\\vfill\n\n"
+        print >>failkeluar,"\\textcolor{red}{\dingline{105}}\n\n\
+    \\end{center}\n\n\
+    \\end{landscape}\n\
+    \\end{document}"
+
     failkeluar.close()
     print "9. Back"
     print "0. Quit" 
