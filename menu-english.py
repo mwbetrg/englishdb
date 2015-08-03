@@ -23,9 +23,9 @@ from peewee import *
 
 #-----------------------------------------------------------------------    
 
-db = SqliteDatabase('english-notes-exercises.sqlite', **{})
+#db = SqliteDatabase('english-notes-exercises.sqlite', **{})
 
-#db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
+db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -272,7 +272,7 @@ def writeidiom():
     \\begin{document}\n\n\
     \\begin{landscape}\n\
     \\Huge\n\
-    \\centerline{\\textcolor{orange}{\\so{WORD(S) OF THE DAY}}}\n\
+    \\centerline{\\textcolor{orange}{\\so{IDIOM OF THE DAY}}}\n\
     \\medskip\n\
     \\begin{center}\n"
     for i in w:
