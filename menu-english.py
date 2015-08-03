@@ -256,15 +256,15 @@ def writeidiom():
 
     failtex = "/storage/extSdCard/texdocs/iotd/iotd-"+tarikh+".tex"
     failkeluar = open(failtex, "w")  
-
-
+    reload(sys) 
+    sys.setdefaultencoding('utf8')
     print tarikh
 
     tarikh = (time.strftime("%Y%m%d"))
     sdir = "/storage/extSdCard/texdocs/iotd/"
     failtex = sdir+"iotd-"+tarikh+".tex"
     failkeluar = open(failtex, "w")  
-    print tarikh
+
     w = Iotd.select().where(Iotd.date == tarikh)
 
     print >>failkeluar,"\documentclass[12pt,a5paper]{article}\n\
@@ -284,6 +284,7 @@ def writeidiom():
     \\medskip\n\
     \\begin{center}\n"
     for i in w:
+        print i.idiom, i.meaning, i.sentence+"\n"
         print >>failkeluar,"\\textbf{\\so{%s}} \n\n \\medskip" % i.idiom
         print >>failkeluar," \\textit{%s} "   %   i.meaning
         print >>failkeluar,"\\medskip \n"
