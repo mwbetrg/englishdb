@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #Created : Wed 22 Jul 2015 08:30:54 AM UTC
-#Last Modified : Wed 22 Jul 2015 10:01:16 AM UTC
+#Last Modified : Mon 03 Aug 2015 07:21:31 PM UTC
 
 #qpy:2
 #qpy:console
@@ -11,7 +11,8 @@ import sys
 import sqlite3
 import time
 
-reload(sys) sys.setdefaultencoding('utf8')
+reload(sys) 
+sys.setdefaultencoding('utf8')
 
 tarikh = (time.strftime("%Y%m%d"))
 
