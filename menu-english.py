@@ -158,6 +158,8 @@ def wordtomorrow():
 # Idiom for tomorrow
 def idiomtomorrow():
     print "iotd for tomorrow\n"
+    reload(sys) 
+    sys.setdefaultencoding('utf8')
     today = datetime.datetime.today()
     tomorrow = today + datetime.timedelta(days=1)
     esok = tomorrow.strftime("%Y%m%d")
