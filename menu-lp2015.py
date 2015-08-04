@@ -22,8 +22,8 @@ import calendar
 
 #-----------------------------------------------------------------------    
 
-db = SqliteDatabase('lessonplan2010.db', **{})
-#db = SqliteDatabase('/storage/extSdCard/mydb/lessonplan2010.db', **{})
+#db = SqliteDatabase('lessonplan2010.db', **{})
+db = SqliteDatabase('/storage/extSdCard/mydb/lessonplan2010.db', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -509,12 +509,12 @@ def pindahbankkelp2015():
     print "=" * 60
     for j in lp2015baru:
         print "["+str(j.date)+"]", j.tingkatan
-        print "\t "+j.timestart+" -- "+j.timeend
+        print "\t "+str(j.timestart)+" -- "+str(j.timeend)
         print "\t LO1: "+j.lo1
         print "\t LO2: "+j.lo2
         print "\t Content: "+j.content
-        print "\t Activity 1 :"+j.activity1
-        print "\t Activity 2 :"+j.activity2
+        print "\t Activity 1 :"+str(j.activity1)
+        print "\t Activity 2 :"+str(j.activity2)
     print "=" * 60
     print "9. Back"
     print "0. Quit" 

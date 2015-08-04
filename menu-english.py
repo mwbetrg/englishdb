@@ -165,7 +165,7 @@ def idiomtomorrow():
     esok = tomorrow.strftime("%Y%m%d")
     w = Iotd.select().where(Iotd.date == esok)
     for i in w:
-        print "\n["+i.date+"] "+i.idiom+" ("+i.meaning+") : "+i.sentence
+        print "\n["+i.date+"] "+i.idiom+" ("+i.meaning+") : "+i.sentence+"\n"
     print "9. Back"
     print "0. Quit" 
     choice = raw_input(" >>  ")
