@@ -22,8 +22,8 @@ import calendar
 
 #-----------------------------------------------------------------------    
 
-#db = SqliteDatabase('lessonplan2010.db', **{})
-db = SqliteDatabase('/storage/extSdCard/mydb/lessonplan2010.db', **{})
+db = SqliteDatabase('lessonplan2010.db', **{})
+#db = SqliteDatabase('/storage/extSdCard/mydb/lessonplan2010.db', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -147,6 +147,7 @@ def masuklessonplanbank():
                           duration=duration, theme=theme, topic=topic,\
                           lo1=lo1, lo2=lo2, lo3=lo3,\
                           content=content, activity1=activity1,\
+                          activity2=activity2,\
                           assimilation=assimilation, impact=impact, note=note)
         q.execute()
 

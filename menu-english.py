@@ -304,6 +304,30 @@ def writeidiom():
     exec_menu(choice)
     return
 
+def searchword():
+    print "Cari perkataan daripada Word\n"
+    kata = raw_input("Masukkan perkataan: \n")
+    u = Wotd.select().where(Wotd.word.contains(kata))
+    for i in u:
+        print "="*len(i.word)+"\n"+str(i.word)+"\n"+"="*len(i.word)+"\n"+i.meaning+"\n"+i.sentence
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+
+def searchidiom():
+    print "Cari peribahasa daripada Word\n"
+    kata = raw_input("Masukkan peribahasa: \n")
+    u = Iotd.select().where(Iotd.idiom.contains(kata))
+    for i in u:
+        print "="*len(i.idiom)+"\n"+str(i.idiom)+"\n"+"="*len(i.idiom)+"\n"+i.meaning+"\n"+i.sentence
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+
 #-----------------------------------------------------------------------    
 
 def calendarview():
@@ -334,6 +358,8 @@ menu_actions = {
     'aw': addword,
     'ai': addidiom,
     'it': idiomtomorrow,
+    'sw': searchword,
+    'si': searchidiom,
     'wt': wordtomorrow,
     'wi': writeidiom,
     'ww': writeword,
