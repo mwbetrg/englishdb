@@ -305,6 +305,8 @@ def writeidiom():
     return
 
 def searchword():
+    reload(sys) 
+    sys.setdefaultencoding('utf8')
     print "Cari perkataan daripada Word\n"
     kata = raw_input("Masukkan perkataan: \n")
     u = Wotd.select().where(Wotd.word.contains(kata))
@@ -317,6 +319,8 @@ def searchword():
     return
 
 def searchidiom():
+    reload(sys)
+    sys.setdefaultencoding('utf8')
     print "Cari peribahasa daripada Word\n"
     kata = raw_input("Masukkan peribahasa: \n")
     u = Iotd.select().where(Iotd.idiom.contains(kata))
