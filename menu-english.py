@@ -332,6 +332,10 @@ def searchidiom():
     exec_menu(choice)
     return
 
+def writeboth():
+    writeword()
+    writeidiom()
+
 #-----------------------------------------------------------------------    
 
 def calendarview():
@@ -365,6 +369,7 @@ menu_actions = {
     'sw': searchword,
     'si': searchidiom,
     'wt': wordtomorrow,
+    'wb': writeboth,
     'wi': writeidiom,
     'ww': writeword,
     '9': back,
