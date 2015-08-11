@@ -13,6 +13,7 @@
 #qpy:2
 #qpy:console
 
+import re
 import site
 import sys, os
 import datetime
@@ -23,9 +24,8 @@ from peewee import *
 
 #-----------------------------------------------------------------------    
 
-#db = SqliteDatabase('english-notes-exercises.sqlite', **{})
-
-db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
+db = SqliteDatabase('english-notes-exercises.sqlite', **{})
+#db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -101,8 +101,12 @@ class Wotd(BaseModel):
 db.connect()
 
 #-----------------------------------------------------------------------    
-
+today = datetime.datetime.today()
+tomorrow = today + datetime.timedelta(days=1)
+esok = tomorrow.strftime("%Y%m%d")
+ 
 tahunini = datetime.datetime.today().year
+bulanini = today.strftime("%Y%m")
 
 # Main definition - constants
 menu_actions  = {}  
@@ -142,10 +146,7 @@ def exec_menu(choice):
 
 # Word for tomorrow
 def wordtomorrow():
-    print "wotd for tomorrow\n"
-    today = datetime.datetime.today()
-    tomorrow = today + datetime.timedelta(days=1)
-    esok = tomorrow.strftime("%Y%m%d")
+    print "Word for tomorrow\n"
     w = Wotd.select().where(Wotd.date == esok)
     for i in w:
         print "\n["+i.date+"] "+i.word+" ("+i.meaning+") : "+i.sentence
@@ -157,7 +158,7 @@ def wordtomorrow():
 
 # Idiom for tomorrow
 def idiomtomorrow():
-    print "iotd for tomorrow\n"
+    print "Idiom for tomorrow\n"
     reload(sys) 
     sys.setdefaultencoding('utf8')
     today = datetime.datetime.today()
@@ -178,10 +179,19 @@ def addword():
     kata = raw_input("Enter new word: \n")
     jenis = raw_input("Enter the part of speech: \n")
     makna = raw_input("Enter the meaning: \n")
-    ayat = raw_input("Enter the sentence [identify textcolor] :\n")
+    ayat = raw_input("Enter the sentence [identify textcolor with *word*] :\n")
+    ayat = re.sub(r'\*(.*?)\*', r'\\textcolor{blue}{\1}', ayat)
+    print '='*len(ayat)
+    print ayat
+    print '='*len(ayat)
     tarikh = raw_input("Enter the date [YYYYMMDD]:\n")
+    if tarikh == "":
+        hb = bulanini
+    else:
+        hb = tarikh
+    print tarikh
     simpan = Wotd.insert(word=kata, part=jenis, meaning=makna,\
-                         date=tarikh,sentence=ayat).execute()
+                         date=hb,sentence=ayat).execute()
     print "9. Back"
     print "0. Quit" 
     choice = raw_input(" >>  ")
@@ -193,10 +203,19 @@ def addidiom():
     print "Idiom Of The Day"
     peribahasa = raw_input("Enter new idiom: \n")
     makna = raw_input("Enter the meaning: \n")
-    ayat = raw_input("Enter the sentence [identify textcolor] :\n")
+    ayat = raw_input("Enter the sentence [identify textcolor with *word*] :\n")
+    ayat = re.sub(r'\*(.*?)\*', r'\\textcolor{blue}{\1}', ayat)
+    print '='*len(ayat)
+    print ayat
+    print '='*len(ayat)
     tarikh = raw_input("Enter the date [YYYYMMDD]:\n")
+    if tarikh == "":
+        hb = bulanini
+    else:
+        hb = tarikh
+    print tarikh
     simpan = Iotd.insert(idiom=peribahasa,  meaning=makna,\
-                         date=tarikh,sentence=ayat).execute()
+                         date=hb,sentence=ayat).execute()
     print "9. Back"
     print "0. Quit" 
     choice = raw_input(" >>  ")
