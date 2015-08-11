@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #Created : Fri 24 Jul 2015 09:18:22 AM UTC
-#Last Modified : Sat 25 Jul 2015 09:53:38 PM UTC
+#Last Modified : Tue 11 Aug 2015 10:38:22 AM MYT
 
 #qpy:console
 
@@ -13,8 +13,8 @@ from peewee import *
 import datetime
 import io
 
-#db = SqliteDatabase('lessonplan2010.db', **{})
-db = SqliteDatabase('/storage/extSdCard/englishdb/lessonplan2010.db', **{})
+db = SqliteDatabase('lessonplan2010.db', **{})
+#db = SqliteDatabase('/storage/extSdCard/englishdb/lessonplan2010.db', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -300,7 +300,7 @@ print >>failkeluar,"\\usepackage{onepagem}\n\
 namahari = time.strftime("%A",time.strptime(str(datesun),"%Y%m%d"))
 tarikh_dalam_perkataan = time.strftime("%d %B %Y",time.strptime(str(datesun),"%Y%m%d"))
 
-print >>failkeluar,"%s \\hfill %s"  % (namahari, tarikh_dalam_perkataan)
+print >>failkeluar,"%s \\hspace{7cm} Week %s \\hfill %s"  % (namahari, week,tarikh_dalam_perkataan)
 
 print >>failkeluar,"\\begin{longtable}{|p{2.3cm}|p{3.9cm}p{0.3cm}p{9.8cm}|}\\hline\n\
 \\centerline{TIME/CLASS}&\\multicolumn{3}{c|}{\\textit{TOPIC / LEARNING\
@@ -441,7 +441,7 @@ weekmon = Lessonplan2015.select().where(Lessonplan2015.date == datemon)
 namahari = time.strftime("%A",time.strptime(str(datemon),"%Y%m%d"))
 tarikh_dalam_perkataan = time.strftime("%d %B %Y",time.strptime(str(datemon),"%Y%m%d"))
 
-print >>failkeluar,"%s \\hfill %s"  % (namahari, tarikh_dalam_perkataan)
+print >>failkeluar,"%s \\hspace{7cm} Week %s \\hfill %s"  % (namahari, week,tarikh_dalam_perkataan)
 
 
 print >>failkeluar,"\\begin{longtable}{|p{2.3cm}|p{3.9cm}p{0.3cm}p{9.8cm}|}\\hline\n\
@@ -582,8 +582,7 @@ weektue = Lessonplan2015.select().where(Lessonplan2015.date == datetue)
 namahari = time.strftime("%A",time.strptime(str(datetue),"%Y%m%d"))
 tarikh_dalam_perkataan = time.strftime("%d %B %Y",time.strptime(str(datetue),"%Y%m%d"))
 
-print >>failkeluar,"%s \\hfill %s"  % (namahari, tarikh_dalam_perkataan)
-
+print >>failkeluar,"%s \\hspace{7cm} Week %s \\hfill %s"  % (namahari, week,tarikh_dalam_perkataan)
 
 print >>failkeluar,"\\begin{longtable}{|p{2.3cm}|p{3.9cm}p{0.3cm}p{9.8cm}|}\\hline\n\
 \\centerline{TIME/CLASS}&\\multicolumn{3}{c|}{\\textit{TOPIC / LEARNING\
@@ -723,8 +722,7 @@ weekwed = Lessonplan2015.select().where(Lessonplan2015.date == datewed)
 namahari = time.strftime("%A",time.strptime(str(datewed),"%Y%m%d"))
 tarikh_dalam_perkataan = time.strftime("%d %B %Y",time.strptime(str(datewed),"%Y%m%d"))
 
-print >>failkeluar,"%s \\hfill %s"  % (namahari, tarikh_dalam_perkataan)
-
+print >>failkeluar,"%s \\hspace{7cm} Week %s \\hfill %s"  % (namahari, week,tarikh_dalam_perkataan)
 
 print >>failkeluar,"\\begin{longtable}{|p{2.3cm}|p{3.9cm}p{0.3cm}p{9.8cm}|}\\hline\n\
 \\centerline{TIME/CLASS}&\\multicolumn{3}{c|}{\\textit{TOPIC / LEARNING\
@@ -864,8 +862,7 @@ weekthu = Lessonplan2015.select().where(Lessonplan2015.date == datethu)
 namahari = time.strftime("%A",time.strptime(str(datethu),"%Y%m%d"))
 tarikh_dalam_perkataan = time.strftime("%d %B %Y",time.strptime(str(datethu),"%Y%m%d"))
 
-print >>failkeluar,"%s \\hfill %s"  % (namahari, tarikh_dalam_perkataan)
-
+print >>failkeluar,"%s \\hspace{7cm} Week %s \\hfill %s"  % (namahari, week,tarikh_dalam_perkataan)
 
 print >>failkeluar,"\\begin{longtable}{|p{2.3cm}|p{3.9cm}p{0.3cm}p{9.8cm}|}\\hline\n\
 \\centerline{TIME/CLASS}&\\multicolumn{3}{c|}{\\textit{TOPIC / LEARNING\
