@@ -81,6 +81,7 @@ db.connect()
 #-----------------------------------------------------------------------    
 
 tahunini = datetime.datetime.today().year
+hariini = datetime.datetime.today()
 
 # Main definition - constants
 menu_actions  = {}  
@@ -395,7 +396,11 @@ def masuklessonplanbank():
 def viewdate():
     print "Menu 3\n"
     tarikh = raw_input("Masukkan tarikh [MMDD]\n")
-    hb = str(tahunini)+str(tarikh)
+    if tarikh == "":
+        hb =  hariini.strftime("%Y%m%d")
+    else:
+        hb = str(tahunini)+str(tarikh)
+    
     u = Lessonplan2015.select().where(Lessonplan2015.date ==\
                                   hb).order_by(Lessonplan2015.timestart)
 
@@ -481,7 +486,9 @@ def searchlptopic():
 def pindahbankkelp2015():
     selectid = raw_input("\nPlease enter LP BANK ID\n")
 
-    lp = Lessonplan2015.select().where(Lessonplan2015.theme == '-')
+    lp = Lessonplan2015.select().where(Lessonplan2015.theme == '-').\
+            order_by(Lessonplan2015.timestart).\
+            order_by(Lessonplan2015.date)
     for l in lp:
         print "("+str(l.id)+")", str(l.date)+" : "+ l.tingkatan, l.timestart,\
         l.timeend+" ["+l.duration+" minutes] "
