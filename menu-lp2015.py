@@ -393,6 +393,28 @@ def masuklessonplanbank():
     exec_menu(choice)
     return
 
+def masuknota():
+    print "Masuk Nota\n"
+    nota = raw_input("Masukkan nota dalam LP 2015: \n")
+    u = Lessonplan2015.select().where(Lessonplan2015.note ==\
+                                  '-').order_by(Lessonplan2015.date)
+    for i in u:
+        print i.id, i.date, i.tingkatan, i.timestart, i.theme, i.topic
+
+    selectlpid = raw_input("Masukkan no LP 2015\n: ")
+    query = Lessonplan2015.update(\
+                note=nota).\
+               where(Lessonplan2015.id == selectlpid)
+    query.execute()
+    n = Lessonplan2015.select().where(Lessonplan2015.id == selectlpid)
+    for a in n:
+        print a.date, a.tingkatan, a.theme, a.topic, a.note
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+
 # View Date
 def viewdate():
     print "Menu 3\n"
@@ -615,7 +637,7 @@ def writeweekly():
             print >>failkeluar,"\n\\centerline{%s-%s}&\
             \\multicolumn{3}{c|}{%s}   \\\\" % (i.timestart,i.timeend,i.theme.upper())
             print >>failkeluar,"\n& \\multicolumn{3}{c|}{\\textit{%s}}  \\\\ \
-            &&&\\\\" % topic 
+            &&&\\\\" % i.topic 
             print >>failkeluar,"\n& \\multicolumn{3}{c|}{\\textit{[%s]}} \\\\" % i.lo1
             print >>failkeluar,"\n& \\multicolumn{3}{c|}{\\textit{%s}}  \\\\" %  i.lo2
             print >>failkeluar,"\n & \\multicolumn{3}{c|}{\\textit{%s}}  \\\\" % i.lo3
@@ -1296,6 +1318,7 @@ menu_actions = {
     'cv': calendarview,
     'dl': deletelp2015id,
     'mb': masuklessonplanbank,
+    'mn': masuknota,
     'pl': pindahbankkelp2015,
     'vw': viewweek,
     'vd': viewdate,
