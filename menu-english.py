@@ -186,8 +186,10 @@ def idiomtomorrow():
 def addword():
     print "Word Of The Day"
     kata = raw_input("Enter new word: \n")
+    kata = kata.strip().lower()
     jenis = raw_input("Enter the part of speech: \n")
     makna = raw_input("Enter the meaning: \n")
+    makna = makna.strip().lower()
     ayat = raw_input("Enter the sentence [identify textcolor with *word*] :\n")
     ayat = re.sub(r'\*(.*?)\*', r'\\textcolor{blue}{\1}', ayat)
     print '='*len(ayat)
@@ -211,7 +213,9 @@ def addword():
 def addidiom():
     print "Idiom Of The Day"
     peribahasa = raw_input("Enter new idiom: \n")
+    peribahasa = peribahasa.strip().lower()
     makna = raw_input("Enter the meaning: \n")
+    makna = makna.strip().lower()
     ayat = raw_input("Enter the sentence [identify textcolor with *word*] :\n")
     ayat = re.sub(r'\*(.*?)\*', r'\\textcolor{blue}{\1}', ayat)
     print '='*len(ayat)
