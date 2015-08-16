@@ -23,8 +23,8 @@ import calendar
 
 #-----------------------------------------------------------------------    
 
-db = SqliteDatabase('lessonplan2010.db', **{})
-#db = SqliteDatabase('/storage/extSdCard/mydb/lessonplan2010.db', **{})
+#db = SqliteDatabase('lessonplan2010.db', **{})
+db = SqliteDatabase('/storage/extSdCard/mydb/lessonplan2010.db', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -1328,7 +1328,7 @@ menu_actions = {
     'slth': searchlptheme,
     'ww': writeweekly,
     '9': back,
-    '0': exit,
+    'q': exit,
 }
 
 # =======================

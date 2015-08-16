@@ -24,8 +24,8 @@ from peewee import *
 
 #-----------------------------------------------------------------------    
 
-db = SqliteDatabase('english-notes-exercises.sqlite', **{})
-#db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
+#db = SqliteDatabase('english-notes-exercises.sqlite', **{})
+db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -96,6 +96,15 @@ class Wotd(BaseModel):
         db_table = 'wotd'
 
 
+class Muetvocab(BaseModel):
+    date = TextField(null=True)
+    kata = TextField(null=True)
+    part = TextField(null=True)
+    sentence = TextField(null=True)
+    word = TextField(unique=True)
+
+    class Meta:
+        db_table = 'muetvocab'
 
 
 db.connect()
@@ -221,6 +230,31 @@ def addidiom():
     choice = raw_input(" >>  ")
     exec_menu(choice)
     return
+
+def addmuet():
+    print "MUET Vocab"
+    kata = raw_input("Enter new word: \n")
+    jenis = raw_input("Enter the part of speech: \n")
+    makna = raw_input("Enter the meaning (Malay): \n")
+    ayat = raw_input("Enter the sentence [identify textcolor with *word*] :\n")
+    ayat = re.sub(r'\*(.*?)\*', r'\\textcolor{blue}{\1}', ayat)
+    print '='*len(ayat)
+    print ayat
+    print '='*len(ayat)
+    tarikh = raw_input("Enter the date [YYYYMMDD]:\n")
+    if tarikh == "":
+        hb = bulanini
+    else:
+        hb = tarikh
+    print tarikh
+    simpan = Muetvocab.insert(word=kata, part=jenis, kata=makna,\
+                         date=hb,sentence=ayat).execute()
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+
 
 # Write Word
 
@@ -351,6 +385,20 @@ def searchidiom():
     exec_menu(choice)
     return
 
+def searchmuet():
+    reload(sys) 
+    sys.setdefaultencoding('utf8')
+    print "Cari perkataan daripada MUET\n"
+    kata = raw_input("Masukkan perkataan: \n")
+    u = Muetvocab.select().where(Muetvocab.word.contains(kata))
+    for i in u:
+        print "="*len(i.word)+"\n"+str(i.word)+"\n"+"="*len(i.word)+"\n"+i.kata+"\n"+i.sentence
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+
 def writeboth():
     writeword()
     writeidiom()
@@ -384,15 +432,17 @@ def exit():
 menu_actions = {
     'aw': addword,
     'ai': addidiom,
+    'am': addmuet,
     'it': idiomtomorrow,
     'sw': searchword,
     'si': searchidiom,
+    'sm': searchmuet,
     'wt': wordtomorrow,
     'wb': writeboth,
     'wi': writeidiom,
     'ww': writeword,
     '9': back,
-    '0': exit,
+    'q': exit,
 }
 
 # =======================
