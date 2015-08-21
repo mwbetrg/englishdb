@@ -24,8 +24,8 @@ from peewee import *
 
 #-----------------------------------------------------------------------    
 
-#db = SqliteDatabase('english-notes-exercises.sqlite', **{})
-db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
+db = SqliteDatabase('english-notes-exercises.sqlite', **{})
+#db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -79,10 +79,12 @@ class Questionsmcq(BaseModel):
 class Totd(BaseModel):
     date = TextField(null=True)
     issue = TextField(unique=True)
-    sentence = TextField(null=True)
+    right = TextField(null=True)
+    wrong = TextField(null=True)
 
     class Meta:
         db_table = 'totd'
+
 
 class Wotd(BaseModel):
     date = TextField(null=True)
@@ -259,6 +261,45 @@ def addmuet():
     exec_menu(choice)
     return
 
+def addtip():
+    print "Tip Of The Day"
+    issue = raw_input("Enter new issue: \n")
+    issue = issue.strip().lower()
+    wrong = raw_input("Enter the wrong usage : \n")
+    wrong = wrong.strip().lower()
+    right = raw_input("Enter the right usage: \n")
+    right = right.strip().lower()
+    print '='*30
+    print wrong
+    print right
+    print '='*30
+    tarikh = raw_input("Enter the date [YYYYMMDD]:\n")
+    if tarikh == "":
+        hb = bulanini
+    else:
+        hb = tarikh
+    print tarikh
+    simpan = Totd.insert(issue=issue, wrong=wrong, right=right,\
+                         date=hb).execute()
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+
+def searchtip():
+    reload(sys) 
+    sys.setdefaultencoding('utf8')
+    print "Search right usage from Tip\n"
+    right = raw_input("Enter right usage: \n")
+    u = Totd.select().where(Totd.right.contains(right))
+    for i in u:
+        print "="*len(i.issue)+"\n"+str(i.wrong)+"\n"+"="*len(i.right)
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
 
 # Write Word
 
@@ -437,10 +478,12 @@ menu_actions = {
     'aw': addword,
     'ai': addidiom,
     'am': addmuet,
+    'at': addtip,
     'it': idiomtomorrow,
     'sw': searchword,
     'si': searchidiom,
     'sm': searchmuet,
+    'st': searchtip,
     'wt': wordtomorrow,
     'wb': writeboth,
     'wi': writeidiom,
