@@ -24,8 +24,8 @@ from peewee import *
 
 #-----------------------------------------------------------------------    
 
-db = SqliteDatabase('english-notes-exercises.sqlite', **{})
-#db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
+#db = SqliteDatabase('english-notes-exercises.sqlite', **{})
+db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -444,9 +444,70 @@ def searchmuet():
     exec_menu(choice)
     return
 
+def searchquestionsfb():
+    reload(sys) 
+    sys.setdefaultencoding('utf8')
+    print "Search question FB\n"
+    item = raw_input("Enter item: \n")
+    u = Questionsfb.select().where(Questionsfb.item.contains(item))
+    print "="*30
+    for i in u:
+        print i.item+" Answer: "+str(i.answer)
+    print "="*30
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+
 def writeboth():
     writeword()
     writeidiom()
+
+def addquestionmaster():
+    masa = (time.strftime("%Y%m%d %H:%M:%S"))
+    print "Add Question Master"
+    cat = raw_input("Enter category: \n")
+    cat = cat.strip().lower()
+    level = raw_input("Enter level: \n")
+    level = level.strip().lower()
+    source = raw_input("Enter the source: \n")
+    source = source.strip().lower()
+    topic = raw_input("Enter topic: \n")
+    topic = topic.strip().lower()
+    type = raw_input("Enter type: \n")
+    type = type.strip().lower()
+    tarikh = raw_input("Enter the date [YYYYMMDD]:\n")
+    if tarikh == "":
+        tarikh = masa
+    else:
+        tarikh = tarikh
+    print tarikh
+    simpan = Questionsmaster.insert(cat=cat, level=level, source=source,\
+                         time=tarikh,topic=topic, type=type).execute()
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+
+def addquestionfb():
+    masa = (time.strftime("%Y%m%d %H:%M:%S"))
+    print "Add Question FB"
+    item = raw_input("Enter question: \n")
+    item = item.strip().lower()
+    answer = raw_input("Enter answer: \n")
+    answer = answer.strip().lower()
+    topicid = raw_input("Enter topicid (no - questionmaster): \n")
+    topicid = topicid.strip()
+    simpan = Questionsfb.insert(item=item, answer=answer, topicid=topicid)\
+                         .execute()
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+
 
 #-----------------------------------------------------------------------    
 
@@ -478,8 +539,11 @@ menu_actions = {
     'aw': addword,
     'ai': addidiom,
     'am': addmuet,
+    'aqm': addquestionmaster,
+    'aqfb': addquestionfb,
     'at': addtip,
     'it': idiomtomorrow,
+    'sqfb': searchquestionsfb,
     'sw': searchword,
     'si': searchidiom,
     'sm': searchmuet,
