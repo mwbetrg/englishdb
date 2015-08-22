@@ -460,6 +460,22 @@ def searchquestionsfb():
     exec_menu(choice)
     return
 
+def searchquestionsfbtopicid():
+    reload(sys) 
+    sys.setdefaultencoding('utf8')
+    print "Search question FB topic id\n"
+    number = raw_input("Enter topic id number: \n")
+    u = Questionsfb.select().where(Questionsfb.topicid == number)
+    print "="*30
+    for i in u:
+        print i.item+" Answer: "+str(i.answer)+"("+str(i.topicid)+")"
+    print "="*30
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+
 def writeboth():
     writeword()
     writeidiom()
@@ -544,6 +560,7 @@ menu_actions = {
     'at': addtip,
     'it': idiomtomorrow,
     'sqfb': searchquestionsfb,
+    'dato': searchquestionsfbtopicid,
     'sw': searchword,
     'si': searchidiom,
     'sm': searchmuet,
