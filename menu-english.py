@@ -493,6 +493,10 @@ def addquestionmaster():
     topic = topic.strip().lower()
     type = raw_input("Enter type: \n")
     type = type.strip().lower()
+    instructions = raw_input("Enter instruction(s) :\n")
+    instructions = instructions.strip()
+    suggestions = raw_input("Enter suggestions (answers etc) :\n")
+    suggestions = suggestions.strip()
     tarikh = raw_input("Enter the date [YYYYMMDD]:\n")
     if tarikh == "":
         tarikh = masa
@@ -500,7 +504,7 @@ def addquestionmaster():
         tarikh = tarikh
     print tarikh
     simpan = Questionsmaster.insert(cat=cat, level=level, source=source,\
-                         time=tarikh,topic=topic, type=type).execute()
+                         time=tarikh,topic=topic, type=type, instructions=instructions, suggestions=suggestions).execute()
     print "9. Back"
     print "0. Quit" 
     choice = raw_input(" >>  ")
