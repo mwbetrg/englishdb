@@ -43,8 +43,10 @@ class Iotd(BaseModel):
 
 class Questionsmaster(BaseModel):
     cat = TextField(null=True)
+    instructions = CharField(null=True)
     level  = TextField(null=True)
     source = TextField(null=True)
+    suggestions = CharField(null=True)
     time = TimeField(null=True)
     topic = TextField()
     type = TextField(null=True)
@@ -495,8 +497,16 @@ def addquestionmaster():
     type = type.strip().lower()
     instructions = raw_input("Enter instruction(s) :\n")
     instructions = instructions.strip()
+    if instructions == "":
+        instructions = "-"
+    else:
+        instructions = instructions
     suggestions = raw_input("Enter suggestions (answers etc) :\n")
     suggestions = suggestions.strip()
+    if suggestions == "":
+        suggestions = "-"
+    else:
+        suggestions = suggestions
     tarikh = raw_input("Enter the date [YYYYMMDD]:\n")
     if tarikh == "":
         tarikh = masa
@@ -528,6 +538,13 @@ def addquestionfb():
     exec_menu(choice)
     return
 
+def buildstatistics():
+    statword = Wotd.select(fn.count(Wotd.word)).scalar()
+    statidiom = Iotd.select(fn.count(Iotd.idiom)).scalar()
+    stattip = Totd.select(fn.count(Totd.issue)).scalar()
+    print "Word: "+str(statword)
+    print "Idiom: "+str(statidiom)
+    print "Tip: "+str(stattip)
 
 #-----------------------------------------------------------------------    
 
@@ -562,6 +579,7 @@ menu_actions = {
     'aqm': addquestionmaster,
     'aqfb': addquestionfb,
     'at': addtip,
+    'co': buildstatistics,
     'it': idiomtomorrow,
     'sqfb': searchquestionsfb,
     'sqto': searchquestionsfbtopicid,
