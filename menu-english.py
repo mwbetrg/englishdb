@@ -468,7 +468,7 @@ def searchquestionsfbtopicid():
     u = Questionsfb.select().where(Questionsfb.topicid == number)
     print "="*30
     for i in u:
-        print i.item+" Answer: "+str(i.answer)+"("+str(i.topicid)+")"
+        print i.item+" Answer: "+str(i.answer)
     print "="*30
     print "9. Back"
     print "0. Quit" 
@@ -560,7 +560,7 @@ menu_actions = {
     'at': addtip,
     'it': idiomtomorrow,
     'sqfb': searchquestionsfb,
-    'sbto': searchquestionsfbtopicid,
+    'sqto': searchquestionsfbtopicid,
     'sw': searchword,
     'si': searchidiom,
     'sm': searchmuet,
