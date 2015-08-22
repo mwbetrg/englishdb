@@ -525,9 +525,9 @@ def addquestionfb():
     masa = (time.strftime("%Y%m%d %H:%M:%S"))
     print "Add Question FB"
     item = raw_input("Enter question: \n")
-    item = item.strip().lower()
+    item = item.strip()
     answer = raw_input("Enter answer: \n")
-    answer = answer.strip().lower()
+    answer = answer.strip()
     topicid = raw_input("Enter topicid (no - questionmaster): \n")
     topicid = topicid.strip()
     simpan = Questionsfb.insert(item=item, answer=answer, topicid=topicid)\
@@ -542,8 +542,10 @@ def buildstatistics():
     statword = Wotd.select(fn.count(Wotd.word)).scalar()
     statidiom = Iotd.select(fn.count(Iotd.idiom)).scalar()
     stattip = Totd.select(fn.count(Totd.issue)).scalar()
+    statmuet = Muetvocab.select(fn.count(Muetvocab.word)).scalar()
     print "Word: "+str(statword)
     print "Idiom: "+str(statidiom)
+    print "MUET: "+str(statmuet)
     print "Tip: "+str(stattip)
 
 #-----------------------------------------------------------------------    
