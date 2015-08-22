@@ -465,7 +465,7 @@ def writeboth():
     writeidiom()
 
 def addquestionmaster():
-    masa = (time.strftime("%Y%m%d %H:%M:%S"))
+    masa = (time.strftime("%Y-%m-%d %H:%M:%S"))
     print "Add Question Master"
     cat = raw_input("Enter category: \n")
     cat = cat.strip().lower()
