@@ -110,6 +110,15 @@ class Muetvocab(BaseModel):
     class Meta:
         db_table = 'muetvocab'
 
+class Webcontents(BaseModel):
+    content = TextField(null=True)
+    tags = CharField(null=True)
+    time = DateTimeField(null=True)
+    url = CharField(null=True)
+
+    class Meta:
+        db_table = 'webcontents'
+
 
 db.connect()
 
