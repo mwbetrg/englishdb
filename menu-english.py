@@ -560,7 +560,7 @@ menu_actions = {
     'at': addtip,
     'it': idiomtomorrow,
     'sqfb': searchquestionsfb,
-    'dato': searchquestionsfbtopicid,
+    'sqto': searchquestionsfbtopicid,
     'sw': searchword,
     'si': searchidiom,
     'sm': searchmuet,
