@@ -24,8 +24,8 @@ from peewee import *
 
 #-----------------------------------------------------------------------    
 
-#db = SqliteDatabase('english-notes-exercises.sqlite', **{})
-db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
+db = SqliteDatabase('english-notes-exercises.sqlite', **{})
+#db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -312,6 +312,22 @@ def searchtip():
     exec_menu(choice)
     return
 
+def searchweburl():
+    reload(sys) 
+    sys.setdefaultencoding('utf8')
+    print "Search web content\n"
+    content = raw_input("Enter content: \n")
+    u = Webcontents.select().where(Webcontents.content.contains(content))
+    print '='*30
+    for i in u:
+        print i.content+"\n"+str(i.content)+"\n"
+    print "="*30
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+
 # Write Word
 
 def writeword():
@@ -547,6 +563,27 @@ def addquestionfb():
     exec_menu(choice)
     return
 
+def addweburl():
+    masa = (time.strftime("%Y%m%d %H:%M:%S"))
+    print "Add Web Content"
+    content = raw_input("Enter content: \n")
+    content = content.strip()
+    url = raw_input("Enter URL: \n")
+    if url == "":
+        url = "-"
+    else:
+        url = url
+    url = url.strip()
+    tags = raw_input("Enter tag(s): \n")
+    if tags == "":
+        tags = "-"
+    else:
+        tags = tags
+    tags = tags.strip()
+    simpan = Webcontents.insert(content=content, url=url, tags=tags).execute()
+
+
+
 def buildstatistics():
     statword = Wotd.select(fn.count(Wotd.word)).scalar()
     statidiom = Iotd.select(fn.count(Iotd.idiom)).scalar()
@@ -590,11 +627,13 @@ menu_actions = {
     'aqm': addquestionmaster,
     'aqfb': addquestionfb,
     'at': addtip,
+    'aweb': addweburl,
     'co': buildstatistics,
     'it': idiomtomorrow,
     'sqfb': searchquestionsfb,
     'sqto': searchquestionsfbtopicid,
     'sw': searchword,
+    'sweb': searchweburl,
     'si': searchidiom,
     'sm': searchmuet,
     'st': searchtip,
