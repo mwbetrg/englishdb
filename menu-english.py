@@ -24,8 +24,8 @@ from peewee import *
 
 #-----------------------------------------------------------------------    
 
-db = SqliteDatabase('english-notes-exercises.sqlite', **{})
-#db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
+#db = SqliteDatabase('english-notes-exercises.sqlite', **{})
+db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
 
 class BaseModel(Model):
     class Meta:
@@ -583,7 +583,6 @@ def addweburl():
     simpan = Webcontents.insert(content=content, url=url, tags=tags).execute()
 
 
-
 def buildstatistics():
     statword = Wotd.select(fn.count(Wotd.word)).scalar()
     statidiom = Iotd.select(fn.count(Iotd.idiom)).scalar()
@@ -593,7 +592,12 @@ def buildstatistics():
     print "Idiom: "+str(statidiom)
     print "MUET: "+str(statmuet)
     print "Tip: "+str(stattip)
-
+    print "9. Back"
+    print "0. Quit" 
+    choice = raw_input(" >>  ")
+    exec_menu(choice)
+    return
+    
 #-----------------------------------------------------------------------    
 
 def calendarview():
