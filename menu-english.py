@@ -24,8 +24,10 @@ from peewee import *
 
 #-----------------------------------------------------------------------    
 
-#db = SqliteDatabase('english-notes-exercises.sqlite', **{})
-db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
+if os.path.exists('/storage/extSdCard'):
+    db = SqliteDatabase('/storage/extSdCard/mydb/english-notes-exercises.sqlite', **{})
+else:
+    db = SqliteDatabase('english-notes-exercises.sqlite', **{})
 
 class BaseModel(Model):
     class Meta:
