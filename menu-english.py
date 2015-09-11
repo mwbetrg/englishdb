@@ -667,8 +667,8 @@ def sendingwordandidioms():
     msgiotd.attach(partiotd)
     server.starttls()
     server.login(fromaddr , "5147mwbe")
-    textwotd = msgwotd.as_string()
-    server.sendmail(fromaddr , toaddr , textwotd)
+    textiotd = msgiotd.as_string()
+    server.sendmail(fromaddr , toaddr , textiotd)
     server.quit()
     print "9. Back"
     print "0. Quit" 
