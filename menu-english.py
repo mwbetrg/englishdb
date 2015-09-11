@@ -24,6 +24,7 @@ from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
 from email.MIMEBase import MIMEBase
 from email import encoders
+import ConfigParser
 from peewee import *
 
 
@@ -607,10 +608,17 @@ def buildstatistics():
 
 
 def sendingwordandidioms():
+
     today = datetime.datetime.today()
     adaybefore = today - datetime.timedelta(days=1)
     tarikh = (time.strftime("%Y%m%d"))
     semalam = adaybefore.strftime("%Y-%m-%d")
+
+    config = ConfigParser.ConfigParser()
+    config.read('batak.cfg')
+ 
+    pengguna = config.get("surat","pengguna")
+    masuk = config.get("surat","masuk")
 
     sdirwotd = "/storage/extSdCard/texdocs/wotd/"
     filenamewotd = "wotd-"+tarikh+".pdf.jpg" 
@@ -620,7 +628,7 @@ def sendingwordandidioms():
     filenameiotd = "iotd-"+tarikh+".pdf.jpg" 
     fullpathfilenameiotd = sdiriotd+"iotd-"+tarikh+".pdf.jpg"    
     
-    fromaddr = "mwbetrg@gmail.com"
+    fromaddr = pengguna
     toaddr = "nege725saze@post.wordpress.com"
     server01 = smtplib.SMTP('smtp.gmail.com' ,587 )
     server02 = smtplib.SMTP('smtp.gmail.com' ,587 )
@@ -654,7 +662,7 @@ def sendingwordandidioms():
     partwotd.add_header('Content-Disposition' , "attachment; filename=%s" % filenamewotd)
     msgwotd.attach(partwotd)
     server01.starttls()
-    server01.login(fromaddr , "5147mwbe")
+    server01.login(fromaddr , masuk)
     textwotd = msgwotd.as_string()
     server01.sendmail(fromaddr , toaddr , textwotd)
     server01.quit()
@@ -667,7 +675,7 @@ def sendingwordandidioms():
     partiotd.add_header('Content-Disposition' , "attachment; filename=%s" % filenameiotd)
     msgiotd.attach(partiotd)
     server02.starttls()
-    server02.login(fromaddr , "5147mwbe")
+    server02.login(fromaddr , masuk)
     textiotd = msgiotd.as_string()
     server02.sendmail(fromaddr , toaddr , textiotd)
     server02.quit()
