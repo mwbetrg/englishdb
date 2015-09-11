@@ -23,8 +23,11 @@ import calendar
 
 #-----------------------------------------------------------------------    
 
-#db = SqliteDatabase('lessonplan2010.db', **{})
-db = SqliteDatabase('/storage/extSdCard/mydb/lessonplan2010.db', **{})
+if os.path.exists('/storage/extSdCard'):
+    db = SqliteDatabase('/storage/extSdCard/mydb/lessonplan2010.db', **{})
+else:
+    db = SqliteDatabase('lessonplan2010.db', **{})
+
 
 class BaseModel(Model):
     class Meta:
@@ -95,7 +98,7 @@ menu_actions  = {}
 def main_menu():
     os.system('clear')
     
-    print "Selamat Datang\n"
+    print ":: LP 2015 ::\n"
     print "Sila pilih menu yang dikehendaki:"
     print "1. Menu 1"
     print "2. Menu 2"
@@ -581,8 +584,8 @@ def writeweekly():
 
     datesun = int(lpweeksun.date)
 
-    sdir = "/tmp/"
-    #sdir = "/storage/extSdCard/lp2015/"
+    #sdir = "/tmp/"
+    sdir = "/storage/extSdCard/lp2015/"
 
     failtex = sdir+"weekly-week-"+str(week)+"-"+str(datesun)+".tex"
     failtexlog = sdir+"weekly"+str(datesun)+".log"
@@ -1045,7 +1048,7 @@ def writeweekly():
             print >>failkeluar,"\n\\centerline{%s-%s}&\
             \\multicolumn{3}{c|}{%s}   \\\\" % (i.timestart,i.timeend,i.theme.upper())
             print >>failkeluar,"\n& \\multicolumn{3}{c|}{\\textit{%s}}  \\\\ \
-            &&&\\\\" % topic 
+            &&&\\\\" % i.topic 
             print >>failkeluar,"\n& \\multicolumn{3}{c|}{\\textit{[%s]}} \\\\" % i.lo1
             print >>failkeluar,"\n& \\multicolumn{3}{c|}{\\textit{%s}}  \\\\" %  i.lo2
             print >>failkeluar,"\n & \\multicolumn{3}{c|}{\\textit{%s}}  \\\\" % i.lo3
