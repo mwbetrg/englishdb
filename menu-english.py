@@ -712,6 +712,7 @@ menu_actions = {
     'aweb': addweburl,
     'co': buildstatistics,
     'it': idiomtomorrow,
+    'se': sendingwordandidioms,
     'sqfb': searchquestionsfb,
     'sqto': searchquestionsfbtopicid,
     'sw': searchword,
