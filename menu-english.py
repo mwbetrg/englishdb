@@ -622,7 +622,8 @@ def sendingwordandidioms():
     
     fromaddr = "mwbetrg@gmail.com"
     toaddr = "nege725saze@post.wordpress.com"
-    server = smtplib.SMTP('smtp.gmail.com' ,587 )
+    server01 = smtplib.SMTP('smtp.gmail.com' ,587 )
+    server02 = smtplib.SMTP('smtp.gmail.com' ,587 )
 
     msgwotd = MIMEMultipart()
     msgwotd['From' ] = fromaddr
@@ -652,8 +653,8 @@ def sendingwordandidioms():
     encoders.encode_base64(partwotd)
     partwotd.add_header('Content-Disposition' , "attachment; filename=%s" % filenamewotd)
     msgwotd.attach(partwotd)
-    server.starttls()
-    server.login(fromaddr , "5147mwbe")
+    server01.starttls()
+    server01.login(fromaddr , "5147mwbe")
     textwotd = msgwotd.as_string()
     server.sendmail(fromaddr , toaddr , textwotd)
     server.quit()
@@ -665,8 +666,8 @@ def sendingwordandidioms():
     encoders.encode_base64(partiotd)
     partiotd.add_header('Content-Disposition' , "attachment; filename=%s" % filenameiotd)
     msgiotd.attach(partiotd)
-    server.starttls()
-    server.login(fromaddr , "5147mwbe")
+    server02.starttls()
+    server02.login(fromaddr , "5147mwbe")
     textiotd = msgiotd.as_string()
     server.sendmail(fromaddr , toaddr , textiotd)
     server.quit()
