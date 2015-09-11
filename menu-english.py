@@ -656,8 +656,8 @@ def sendingwordandidioms():
     server01.starttls()
     server01.login(fromaddr , "5147mwbe")
     textwotd = msgwotd.as_string()
-    server.sendmail(fromaddr , toaddr , textwotd)
-    server.quit()
+    server01.sendmail(fromaddr , toaddr , textwotd)
+    server01.quit()
 
     msgiotd.attach(MIMEText(bodyiotd, 'plain' ))
     attachmentiotd = open(fullpathfilenameiotd , "rb")
@@ -669,8 +669,8 @@ def sendingwordandidioms():
     server02.starttls()
     server02.login(fromaddr , "5147mwbe")
     textiotd = msgiotd.as_string()
-    server.sendmail(fromaddr , toaddr , textiotd)
-    server.quit()
+    server02.sendmail(fromaddr , toaddr , textiotd)
+    server02.quit()
     print "9. Back"
     print "0. Quit" 
     choice = raw_input(" >>  ")
