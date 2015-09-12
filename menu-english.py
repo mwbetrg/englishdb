@@ -20,6 +20,7 @@ import datetime
 import time
 import calendar
 import smtplib
+import getpass
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
 from email.MIMEBase import MIMEBase
@@ -614,12 +615,6 @@ def sendingwordandidioms():
     tarikh = (time.strftime("%Y%m%d"))
     semalam = adaybefore.strftime("%Y-%m-%d")
 
-    config = ConfigParser.ConfigParser()
-    config.read('batak.cfg')
- 
-    pengguna = config.get("surat","pengguna")
-    masuk = config.get("surat","masuk")
-
     sdirwotd = "/storage/extSdCard/texdocs/wotd/"
     filenamewotd = "wotd-"+tarikh+".pdf.jpg" 
     fullpathfilenamewotd = sdirwotd+"wotd-"+tarikh+".pdf.jpg"    
@@ -628,7 +623,8 @@ def sendingwordandidioms():
     filenameiotd = "iotd-"+tarikh+".pdf.jpg" 
     fullpathfilenameiotd = sdiriotd+"iotd-"+tarikh+".pdf.jpg"    
     
-    fromaddr = pengguna
+    fromaddr = raw_input("Enter gmail username: \n")
+    masuk = getpass.getpass("Enter password: \n")
     toaddr = "nege725saze@post.wordpress.com"
     server01 = smtplib.SMTP('smtp.gmail.com' ,587 )
     server02 = smtplib.SMTP('smtp.gmail.com' ,587 )
